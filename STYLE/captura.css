@@ -1,0 +1,278 @@
+hhtml, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos para el body */
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f2f2;
+    min-height: 100vh;
+    flex: 1;
+}
+
+/* Estilos para el main */
+main {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+}
+
+/* Estilos para el pie de página */
+.footer {
+    background-color: #0a0a23;
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 4px solid #fdb347;
+    padding: 0px 50px;
+    margin-top: auto; /* Asegúrate de tener esta línea */
+}
+
+#descripcion{
+    padding: 20px;
+}
+
+/* Estilos para el contenedor principal */
+.container {
+    background-color: #fff;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin: 10%;
+    padding:20px;
+}
+
+/* Radio buton*/
+.radio-group {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #666666;
+    border-radius: 3px;
+}
+.form-group input {
+    width: 80%;
+    padding: 8px;
+    box-sizing: border-box;
+    text-align: center; /* Centra el texto dentro de los campos de entrada */
+}
+.radio-group input[type="radio"] {
+    margin-right: 5px;
+}
+.radio-group label {
+    margin-right: 15px;
+}
+/* Radio buton*/
+
+
+
+/* Estilos para el contenedor de la imagen */
+.imagen {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10%;
+}
+
+/* Estilos para la imagen */
+.imagen img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos para los grupos de formulario */
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinea los elementos al centro */
+}
+
+/* Estilos para las etiquetas de los formularios */
+.form-group label {
+    margin-bottom: 5px;
+    text-align: center; /* Centra el texto dentro de la etiqueta */
+    width: 100%; /* Asegúrate de que las etiquetas ocupen el ancho completo */
+}
+
+/* Estilos para los campos de entrada de los formularios */
+.form-group input {
+    width: 80%;
+    padding: 8px;
+    box-sizing: border-box;
+    text-align: center; /* Centra el texto dentro de los campos de entrada */
+}
+
+
+/* Estilos para el botón de envío del formulario */
+.form-group button {
+    width: 80%;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Estilos para el botón de envío del formulario al pasar el ratón */
+.form-group button:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para el encabezado */
+.header {
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+    background-color: #0a0a23;
+    color: #fff;
+    border-bottom: 4px solid #fdb347;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilos para los botones del encabezado */
+.header-button {
+    padding: 2px;
+    padding-right: 10px;
+    background-color: #0a0a23;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 15px;
+    color: #fff;
+    border: none;
+    border-left: 1px solid #bbb;
+}
+
+/* Estilos para el enlace del encabezado */
+#mytiendita {
+    margin-left: 15px;
+    color: #fff;
+}
+
+/* inicio de sesion*/
+.containersesion {
+    background-color: #3b83bd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin: 10%;
+}
+
+
+/* inicio de sesion*/
+
+
+
+/* Estilos para la información de contacto y redes sociales en el pie de página */
+.contact-info, .social-media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+/* Estilos para los enlaces de redes sociales */
+.social-media a {
+    color: #fdb347;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+/* Estilos para los enlaces de redes sociales al pasar el ratón */
+.social-media a:hover {
+    text-decoration: underline;
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        padding: 20px;
+    }
+
+    .container, .imagen {
+        width: 80%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .footer {
+        max-height: 150px;
+        background-color: #0a0a23;
+        color: #fff;
+        font-size: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 4px solid #fdb347;
+        padding: 0px 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.5em;
+    }
+
+    .header-button {
+        font-size: 12px;
+    }
+
+    main {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        padding: 20px;
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+
+    .container, .imagen {
+        width: 100%;
+        height: 80%;
+        margin-left: 0;
+    }
+
+    .footer {
+        max-height: 150px;
+        background-color: #0a0a23;
+        color: #fff;
+        font-size: 12px;
+        line-height: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 4px solid #fdb347;
+        padding: 0px 50px;
+        height: 80%;
+    }
+
+    .contact-info, .social-media {
+        margin: 10px;
+    }
+}
