@@ -1,11 +1,11 @@
 function goinicio() {
-    window.location.href = '/html/index.html';
+    window.location.href = 'index.html';
 }
 function goregistro() {
-    window.location.href = '/html/Sesion.html';
+    //window.location.href = '/html/Sesion.html';
 }
 function govista() {
-    window.location.href = '/html/vista.html';
+    window.location.href = 'vista.html';
 }
 
 /* Array de productos */
