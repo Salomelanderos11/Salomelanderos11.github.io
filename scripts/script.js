@@ -1,11 +1,8 @@
-
 function  goinicio(){
-   
     window.location.href ='index.html';
 }
 function  goregistro(){
-   c=1;         
-    //window.location.href = 'Sesion.html';
+    window.location.href = 'Sesion.html';
 }
 function  govista(){
     window.location.href = 'vista.html';
@@ -13,139 +10,15 @@ function  govista(){
 function  gocategoria(){
     window.location.href = 'categoria.html';
 }
-/*Array de productos */
-const dic_productos=[
-    { name:"865762", nombre: "Mano del Salomé",precio:"15.00$", desc:`<h2>nombre1</h2>
-            <p>Una mano ordinaria.<hr>
-                Tiene corte de piel y material sintético, con forro textil. Es de color bronce, y se ajusta con agujetas. Debido a su suela TR, se amoldan fácilmente a tus pies.
-                <hr>
-                Ya es hora de que estrenes... ¡Adquiérelas hoy mismo!</p>` },
-    { name:"1", nombre: "Botas",precio:"15.00$" , desc:`<h2>La mano del Salomé</h2>
-        <p>Una mano ordinaria.<hr>
-            Tiene corte de piel y material sintético, con forro textil. Es de color bronce, y se ajusta con agujetas. Debido a su suela TR, se amoldan fácilmente a tus pies.
-            <hr>
-            Ya es hora de que estrenes... ¡Adquiérelas hoy mismo!</p>` },
-    { name:"2", nombre: "Camisa",precio:"15.00$" , desc:`<h2>La mano del Salomé</h2>
-        <p>Una mano ordinaria.<hr>
-            Tiene corte de piel y material sintético, con forro textil. Es de color bronce, y se ajusta con agujetas. Debido a su suela TR, se amoldan fácilmente a tus pies.
-            <hr>
-            Ya es hora de que estrenes... ¡Adquiérelas hoy mismo!</p>` },
-    { name:"4", nombre: "Carrito",precio:"15.00$" , desc:`<h2>La mano del Salomé</h2>
-        <p>Una mano ordinaria.<hr>
-            Tiene corte de piel y material sintético, con forro textil. Es de color bronce, y se ajusta con agujetas. Debido a su suela TR, se amoldan fácilmente a tus pies.
-            <hr>
-            Ya es hora de que estrenes... ¡Adquiérelas hoy mismo!</p>` },
-    { name:"5", nombre: "Jeep",precio:"15.00$", desc:`<h2>La mano del Salomé</h2>
-        <p>Una mano ordinaria.<hr>
-            Tiene corte de piel y material sintético, con forro textil. Es de color bronce, y se ajusta con agujetas. Debido a su suela TR, se amoldan fácilmente a tus pies.
-            <hr>
-            Ya es hora de que estrenes... ¡Adquiérelas hoy mismo!</p>`  },
-    { name:"6", nombre: "Botas",precio:"15.00$", desc:`<h2>La mano del Salomé</h2>
-        <p>Una mano ordinaria.<hr>
-            Tiene corte de piel y material sintético, con forro textil. Es de color bronce, y se ajusta con agujetas. Debido a su suela TR, se amoldan fácilmente a tus pies.
-            <hr>
-            Ya es hora de que estrenes... ¡Adquiérelas hoy mismo!</p>`  },
-    { name:"7", nombre: "Camisa",precio:"15.00$", desc:`<h2>La mano del Salomé</h2>
-        <p>Una mano ordinaria.<hr>
-            Tiene corte de piel y material sintético, con forro textil. Es de color bronce, y se ajusta con agujetas. Debido a su suela TR, se amoldan fácilmente a tus pies.
-            <hr>
-            Ya es hora de que estrenes... ¡Adquiérelas hoy mismo!</p>`  },
-    { name:"8", nombre: "Carrito",precio:"15.00$" , desc:`<h2>La mano del Salomé</h2>
-        <p>Una mano ordinaria.<hr>
-            Tiene corte de piel y material sintético, con forro textil. Es de color bronce, y se ajusta con agujetas. Debido a su suela TR, se amoldan fácilmente a tus pies.
-            <hr>
-            Ya es hora de que estrenes... ¡Adquiérelas hoy mismo!</p>` },
-    { name:"9", nombre: "Jeep",precio:"15.00$", desc:`<h2>La mano del Salomé</h2>
-        <p>Una mano ordinaria.<hr>
-            Tiene corte de piel y material sintético, con forro textil. Es de color bronce, y se ajusta con agujetas. Debido a su suela TR, se amoldan fácilmente a tus pies.
-            <hr>
-            Ya es hora de que estrenes... ¡Adquiérelas hoy mismo!</p>`  },
-    { name:"10", nombre: "Botas",precio:"15.00$" , desc:`<h2>La mano del Salomé</h2>
-        <p>Una mano ordinaria.<hr>
-            Tiene corte de piel y material sintético, con forro textil. Es de color bronce, y se ajusta con agujetas. Debido a su suela TR, se amoldan fácilmente a tus pies.
-            <hr>
-            Ya es hora de que estrenes... ¡Adquiérelas hoy mismo!</p>` },
-    { name:"11", nombre: "Camisa",precio:"15.00$" , desc:`<h2>La mano del Salomé</h2>
-        <p>Una mano ordinaria.<hr>
-            Tiene corte de piel y material sintético, con forro textil. Es de color bronce, y se ajusta con agujetas. Debido a su suela TR, se amoldan fácilmente a tus pies.
-            <hr>
-            Ya es hora de que estrenes... ¡Adquiérelas hoy mismo!</p>` },
-    { name:"12", nombre: "Carrito",precio:"15.00$", desc:`<h2>La mano del Salomé</h2>
-        <p>Una mano ordinaria.<hr>
-            Tiene corte de piel y material sintético, con forro textil. Es de color bronce, y se ajusta con agujetas. Debido a su suela TR, se amoldan fácilmente a tus pies.
-            <hr>
-            Ya es hora de que estrenes... ¡Adquiérelas hoy mismo!</p>`  },
-    { name:"13", nombre: "Jeep",precio:"15.00$", desc:`<h2>La mano del Salomé</h2>
-        <p>Una mano ordinaria.<hr>
-            Tiene corte de piel y material sintético, con forro textil. Es de color bronce, y se ajusta con agujetas. Debido a su suela TR, se amoldan fácilmente a tus pies.
-            <hr>
-            Ya es hora de que estrenes... ¡Adquiérelas hoy mismo!</p>`  }/** ,
-    { name:"1", nombre: "Botas",precio:"15.00$" , desc:`<h2>La mano del Salomé</h2>
-        <p>Una mano ordinaria.<hr>
-            Tiene corte de piel y material sintético, con forro textil. Es de color bronce, y se ajusta con agujetas. Debido a su suela TR, se amoldan fácilmente a tus pies.
-            <hr>
-            Ya es hora de que estrenes... ¡Adquiérelas hoy mismo!</p>` },
-    { name:"2", nombre: "Camisa",precio:"15.00$" , desc:`<h2>La mano del Salomé</h2>
-        <p>Una mano ordinaria.<hr>
-            Tiene corte de piel y material sintético, con forro textil. Es de color bronce, y se ajusta con agujetas. Debido a su suela TR, se amoldan fácilmente a tus pies.
-            <hr>
-            Ya es hora de que estrenes... ¡Adquiérelas hoy mismo!</p>` },
-    { name:"4", nombre: "Carrito",precio:"15.00$" , desc:`<h2>La mano del Salomé</h2>
-        <p>Una mano ordinaria.<hr>
-            Tiene corte de piel y material sintético, con forro textil. Es de color bronce, y se ajusta con agujetas. Debido a su suela TR, se amoldan fácilmente a tus pies.
-            <hr>
-            Ya es hora de que estrenes... ¡Adquiérelas hoy mismo!</p>` },
-    { name:"5", nombre: "Jeep",precio:"15.00$", desc:`<h2>La mano del Salomé</h2>
-        <p>Una mano ordinaria.<hr>
-            Tiene corte de piel y material sintético, con forro textil. Es de color bronce, y se ajusta con agujetas. Debido a su suela TR, se amoldan fácilmente a tus pies.
-            <hr>
-            Ya es hora de que estrenes... ¡Adquiérelas hoy mismo!</p>`  },
-    { name:"6", nombre: "Botas",precio:"15.00$" , desc:`<h2>La mano del Salomé</h2>
-        <p>Una mano ordinaria.<hr>
-            Tiene corte de piel y material sintético, con forro textil. Es de color bronce, y se ajusta con agujetas. Debido a su suela TR, se amoldan fácilmente a tus pies.
-            <hr>
-            Ya es hora de que estrenes... ¡Adquiérelas hoy mismo!</p>` },
-    { name:"7", nombre: "Camisa",precio:"15.00$", desc:`<h2>La mano del Salomé</h2>
-        <p>Una mano ordinaria.<hr>
-            Tiene corte de piel y material sintético, con forro textil. Es de color bronce, y se ajusta con agujetas. Debido a su suela TR, se amoldan fácilmente a tus pies.
-            <hr>
-            Ya es hora de que estrenes... ¡Adquiérelas hoy mismo!</p>`  },
-    { name:"8", nombre: "Carrito",precio:"15.00$" , desc:`<h2>La mano del Salomé</h2>
-        <p>Una mano ordinaria.<hr>
-            Tiene corte de piel y material sintético, con forro textil. Es de color bronce, y se ajusta con agujetas. Debido a su suela TR, se amoldan fácilmente a tus pies.
-            <hr>
-            Ya es hora de que estrenes... ¡Adquiérelas hoy mismo!</p>` },
-    { name:"9", nombre: "Jeep",precio:"15.00$" , desc:`<h2>La mano del Salomé</h2>
-        <p>Una mano ordinaria.<hr>
-            Tiene corte de piel y material sintético, con forro textil. Es de color bronce, y se ajusta con agujetas. Debido a su suela TR, se amoldan fácilmente a tus pies.
-            <hr>
-            Ya es hora de que estrenes... ¡Adquiérelas hoy mismo!</p>` },
-    { name:"10", nombre: "Botas",precio:"15.00$", desc:`<h2>La mano del Salomé</h2>
-        <p>Una mano ordinaria.<hr>
-            Tiene corte de piel y material sintético, con forro textil. Es de color bronce, y se ajusta con agujetas. Debido a su suela TR, se amoldan fácilmente a tus pies.
-            <hr>
-            Ya es hora de que estrenes... ¡Adquiérelas hoy mismo!</p>`  },
-    { name:"11", nombre: "Camisa",precio:"15.00$", desc:`<h2>La mano del Salomé</h2>
-        <p>Una mano ordinaria.<hr>
-            Tiene corte de piel y material sintético, con forro textil. Es de color bronce, y se ajusta con agujetas. Debido a su suela TR, se amoldan fácilmente a tus pies.
-            <hr>
-            Ya es hora de que estrenes... ¡Adquiérelas hoy mismo!</p>`  },
-    { name:"12", nombre: "Carrito",precio:"15.00$" , desc:`<h2>La mano del Salomé</h2>
-        <p>Una mano ordinaria.<hr>
-            Tiene corte de piel y material sintético, con forro textil. Es de color bronce, y se ajusta con agujetas. Debido a su suela TR, se amoldan fácilmente a tus pies.
-            <hr>
-            Ya es hora de que estrenes... ¡Adquiérelas hoy mismo!</p>` },
-    { name:"13", nombre: "Jeep",precio:"15.00$" , desc:`<h2>La mano del Salomé</h2>
-        <p>Una mano ordinaria.<hr>
-            Tiene corte de piel y material sintético, con forro textil. Es de color bronce, y se ajusta con agujetas. Debido a su suela TR, se amoldan fácilmente a tus pies.
-            <hr>
-            Ya es hora de que estrenes... ¡Adquiérelas hoy mismo!</p>` },*/
-   
-]
+//importar datos de datos.json 
+var dic_productos=  [];
+import data from 'DATA/datos.json' with { type: 'json' };
+dic_productos=data; 
+//importar datos de datos.json
 
-/*Array de productos */
+console.log(dic_productos);
 
-/*////Definir cantidad de paginas////*/
+/*////Definir cantidad de pagina////*/
 const cant_productos = dic_productos.length;
 const product_x_pag= 20;
 
@@ -157,7 +30,7 @@ if (cant_productos<product_x_pag){    can_paginas=1;   }// Si la cantidad de pro
 
 var pagina=[];// Array vacio para añadir la cantidad de paginas  
 var text_paginas="";//aqui vamos agragar los div de cada pagina
-for(i=0;i<can_paginas;i++){         
+for(var i=0 ; i<can_paginas;i++){         
     text_paginas +=`<div id="pagina${i+1}">${i+1}</div>`
     
 }
@@ -170,7 +43,7 @@ ${text_paginas}
 
 /*añadir class active a numero de pagina*/
 var pagina_activa ;
-dig=div_paginas.querySelectorAll('[id]');
+var dig =div_paginas.querySelectorAll('[id]');
     dig[0].classList.add("active");
     dig.forEach(element => {
       element.onclick= function (){
@@ -208,7 +81,7 @@ categori.innerHTML= div_categori;
 function mezclarLista(lista) {
     return lista.sort(() => Math.random() - 0.5);
   }
-lista_mezclada = mezclarLista(dic_productos);
+var lista_mezclada = mezclarLista(dic_productos);
 
 var gallery=document.getElementById("gallery");
 function galleryproduct(pagina_activa){
@@ -220,8 +93,8 @@ function galleryproduct(pagina_activa){
         {
        gall += `
            
-            <div  class="product-card" onclick="click_imagen(${i+1})">
-                <img id="img${i+1}" src="media/${lista_mezclada[i+x].name}.jpg" name="${lista_mezclada[i+x].name}" value=""src="" alt="imagen1">
+            <div  class="product-card" onclick= "click_imagen(${i+1})">
+                <img id="img${i+1}" src="media/${lista_mezclada[i+x].name}/${lista_mezclada[i+x].name}.jpg" name="${lista_mezclada[i+x].name}" value=""src="" alt="imagen1">
                 <div class="product-info">
                     <h3 id="h${i+1}">${lista_mezclada[i+x].name}</h3>
                     <p id="p${i+1}">${lista_mezclada[i+x].precio}</p>
@@ -236,8 +109,8 @@ function galleryproduct(pagina_activa){
         for (i=0;i<(lista_mezclada.length%product_x_pag);i++)
             {
            gall += `
-                <div  class="product-card" onclick="click_imagen(${i+1})">
-                    <img id="img${i+1}" src="media/${lista_mezclada[i+x].name}.jpg" name="${lista_mezclada[i+x].name}" value=""src="" alt="imagen1">
+                <div  class="product-card" onclick= "click_imagen(${i+1})">
+                    <img id="img${i+1}" src="media/${lista_mezclada[i+x].name}/${lista_mezclada[i+x].name}.jpg" name="${lista_mezclada[i+x].name}" value=""src="" alt="imagen1">
                     <div class="product-info">
                         <h3 id="h${i+1}">${lista_mezclada[i+x].name}</h3>
                         <p id="p${i+1}">${lista_mezclada[i+x].precio}</p>
@@ -253,17 +126,16 @@ function galleryproduct(pagina_activa){
 /*////////////////Establecer imagenes de pagina principal de manera aleatoria ////////////////*/
 
     /*//////////////////////click productos//////////////////////*/
-     function click_imagen(id){
-        var val = document.getElementById("img"+id); 
-        valor =val.getAttribute("name");
-        parseInt(valor);
-        var indice = dic_productos.findIndex(objeto => objeto.name === valor);
-        console.log(valor)
-        console.log(indice)
-        localStorage.setItem("ValorCompartido", JSON.stringify(dic_productos[indice]));
-        govista();
-     }
-/*//////////////////////click productos//////////////////////*/
+   window.click_imagen = function(id) {
+    var val = document.getElementById("img" + id); 
+    var valor = val.getAttribute("name");
+    var indice = dic_productos.findIndex(objeto => objeto.name === valor);
+    console.log(valor);
+    console.log(indice);
+    localStorage.setItem("ValorCompartido", JSON.stringify(dic_productos[indice]));
+    govista();
+};
+
 /*//////////////////////click productos//////////////////////*/
 function click_categorias(id){
     
@@ -280,4 +152,3 @@ window.onload = function() {
     button1.onclick = function() { goinicio(); };
     button2.onclick = function() { goregistro(); };
 };
-
