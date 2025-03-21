@@ -12,7 +12,7 @@ function  gocategoria(){
 }
 //importar datos de datos.json 
 var dic_productos=  [];
-import data from 'DATA/datos.json' with { type: 'json' };
+import data from '/DATA/datos.json' with { type: 'json' };
 dic_productos=data; 
 //importar datos de datos.json
 
