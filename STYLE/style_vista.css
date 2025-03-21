@@ -50,7 +50,7 @@ body {
 
 /* Estilos para el contenido principal */
 .main-content {
-    background-image: url('/media/image\ \(1\).png'); /* Ruta a tu imagen */
+    background-image: url('/media/imagen111.png'); /* Ruta a tu imagen */
     background-size: cover; /* Ajusta la imagen para cubrir todo el área */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
