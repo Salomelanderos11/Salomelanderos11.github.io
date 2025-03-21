@@ -107,6 +107,7 @@ img:hover {
     align-items: center;
     border-top: 4px solid black; /* Blanco */
     width: 100%;
+    max-height: 250px;
 }
 
 /* Estilos para la información de contacto y redes sociales en el pie de página */
