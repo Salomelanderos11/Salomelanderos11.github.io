@@ -15,45 +15,9 @@ function  gocategoria(){
 }
 /*Array de productos 
 ///////////////////////////////////////////////////////////////
-fetch('/mypro.1/mypro/DATA/datos.json')
-    .then(response => response.json())
-    .then(data => {
-        let dic_productos = data;
-        console.log(dic_productos);
 
-        // Modificar los datos JSON
-        dic_productos.push({
-            "name": "Nuevo Producto",
-            "precio": "100"
-        });
-
-        dic_productos.forEach(product => {
-            if (product.name === "7") {
-                product.precio = "150";
-            }
-        });
-
-        // Convertir los datos modificados a JSON
-        let updatedData = JSON.stringify(dic_productos, null, 2);
-        console.log(updatedData);
-
-        // Aquí necesitarías enviar los datos modificados de vuelta al servidor
-        // usando una solicitud POST o PUT
-        fetch('/mypro.1/mypro/DATA/datos.json', {
-            method: 'POST', // o 'PUT'
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: updatedData
-        })
-        .then(response => response.json())
-        .then(data => console.log('Success:', data))
-        .catch(error => console.error('Error:', error));
-    })
-    .catch(error => console.error('Error:', error));
-*/
 var datos=  [];
-import data from '/DATA/datos.json' with { type: 'json' };
+
 datos=data;
 // Convertir los datos a JSON
 let datosJSON = JSON.stringify(datos);
@@ -69,9 +33,9 @@ fetch('php/update.php', {
 .then(response => response.text())
 .then(data => console.log('Success:', data))
 .catch(error => console.error('Error:', error));
-
+*/
 ///////////////////////////////////////////////////////////////
-
+import data from '/DATA/datos.json' with { type: 'json' };
 
 var dic_productos=  [];
 console.log("12")
