@@ -8,10 +8,10 @@ function  goregistro(){
     //window.location.href = 'Sesion.html';
 }
 function  govista(){
-    window.location.href = '/mypro.1/mypro/html/vista.html';
+    window.location.href = 'vista.html';
 }
 function  gocategoria(){
-    window.location.href = '/mypro.1/mypro/html/categoria.html';
+    window.location.href = 'categoria.html';
 }
 /*Array de productos 
 ///////////////////////////////////////////////////////////////
@@ -53,13 +53,13 @@ fetch('/mypro.1/mypro/DATA/datos.json')
     .catch(error => console.error('Error:', error));
 */
 var datos=  [];
-import data from '/mypro.1/mypro/DATA/datos.json' with { type: 'json' };
+import data from '/DATA/datos.json' with { type: 'json' };
 datos=data;
 // Convertir los datos a JSON
 let datosJSON = JSON.stringify(datos);
 
 // Enviar los datos al script PHP
-fetch('/mypro.1/mypro/php/update.php', {
+fetch('/php/update.php', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'
