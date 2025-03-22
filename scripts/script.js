@@ -59,7 +59,7 @@ datos=data;
 let datosJSON = JSON.stringify(datos);
 
 // Enviar los datos al script PHP
-fetch('/php/update.php', {
+fetch('php/update.php', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'
