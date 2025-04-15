@@ -8,12 +8,12 @@ var valor= 0;
 
 window.onload = function() { 
     var value = objetoRecuperado.nombre; 
-    var ruta= "/mypro/media/"+(value)+"/"+(value)+".jpg"
+    var ruta= "media/"+(value)+"/"+(value)+".jpg"
     miImagen.src=ruta;
     }
 /*Extraer valor compartido del localstorage al cargar la pagina y establecer la imagen inicial*/
 function  goinicio(){
-        window.location.href ='/mypro/html/index.html';
+        window.location.href ='html/index.html';
     }
 button1.onclick =function() {  goinicio();   };
 
@@ -30,7 +30,7 @@ function sig_right() {
     if (valor > 4) {  
         valor = 0;
     }
-    var texto = valor === 0 ? `/mypro/media/${objetoRecuperado.nombre}/${objetoRecuperado.nombre}.jpg` : `/mypro/media/${objetoRecuperado.nombre}/${objetoRecuperado.nombre}.${valor}.jpg`;
+    var texto = valor === 0 ? `media/${objetoRecuperado.nombre}/${objetoRecuperado.nombre}.jpg` : `media/${objetoRecuperado.nombre}/${objetoRecuperado.nombre}.${valor}.jpg`;
     miImagen.src = texto;
 }
 
@@ -39,7 +39,7 @@ function sig_left() {
     if (valor < 0) {
         valor = 4;
     }
-    var texto = valor === 0 ? `/mypro/media/${objetoRecuperado.nombre}/${objetoRecuperado.nombre}.jpg` : `/mypro/media/${objetoRecuperado.nombre}/${objetoRecuperado.nombre}.${valor}.jpg`;
+    var texto = valor === 0 ? `media/${objetoRecuperado.nombre}/${objetoRecuperado.nombre}.jpg` : `media/${objetoRecuperado.nombre}/${objetoRecuperado.nombre}.${valor}.jpg`;
     miImagen.src = texto;
 }
 

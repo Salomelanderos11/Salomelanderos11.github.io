@@ -1,15 +1,15 @@
 function goinicio() {
-    window.location.href = '/mypro/html/index.html';
+    window.location.href = 'html/index.html';
 }
 function goregistro() {
     window.location.href = '/html/Sesion.html';
 }
 function govista() {
-    window.location.href = '/mypro/html/vista.html';
+    window.location.href = 'html/vista.html';
 }
 var gallery = document.getElementById("gallery");
 /* Array de productos */
-import base from '/mypro/DATA/datos.json' with { type: 'json' };
+import base from 'DATA/datos.json' with { type: 'json' };
 
 /* Capturar la categoría clicada en el index */
 var categoria_elegida = localStorage.getItem('categoria');

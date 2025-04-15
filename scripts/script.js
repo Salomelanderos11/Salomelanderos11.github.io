@@ -8,16 +8,16 @@ function goregistro() {
 }
 
 function govista() {
-    window.location.href = '/mypro/html/vista.html';
+    window.location.href = 'html/vista.html';
 }
 
 function gocategoria() {
-    window.location.href = '/mypro/html/categoria.html';
+    window.location.href = 'html/categoria.html';
 }
 
 /* Array de productos */
 var datos = [];
-import base from '/mypro/DATA/datos.json' with { type: 'json' };
+import base from 'DATA/datos.json' with { type: 'json' };
  
 var dic_productos= base;
 console.log(base);
@@ -91,7 +91,7 @@ function galleryproduct(pagina_activa) {
         for (i = 0; i < product_x_pag; i++) {
             gall += `
             <div class="product-card" onclick="click_imagen(${i + 1})">
-                <img id="img${i + 1}" src="/mypro/media/${lista_mezclada[i + x].nombre}/${lista_mezclada[i + x].nombre}.jpg" nombre="${lista_mezclada[i + x].nombre}" alt="imagen1">
+                <img id="img${i + 1}" src="media/${lista_mezclada[i + x].nombre}/${lista_mezclada[i + x].nombre}.jpg" nombre="${lista_mezclada[i + x].nombre}" alt="imagen1">
                 <div class="product-info">
                     <h3 id="h${i + 1}">${lista_mezclada[i + x].nombre}</h3>
                     <p id="p${i + 1}">${lista_mezclada[i + x].precio}</p>
@@ -102,7 +102,7 @@ function galleryproduct(pagina_activa) {
         for (i = 0; i < (lista_mezclada.length % product_x_pag); i++) {
             gall += `
             <div class="product-card" onclick="click_imagen(${i + 1})">
-                <img id="img${i + 1}" src="/mypro/media/${lista_mezclada[i + x].nombre}/${lista_mezclada[i + x].nombre}.jpg" nombre="${lista_mezclada[i + x].nombre}" alt="imagen1">
+                <img id="img${i + 1}" src="media/${lista_mezclada[i + x].nombre}/${lista_mezclada[i + x].nombre}.jpg" nombre="${lista_mezclada[i + x].nombre}" alt="imagen1">
                 <div class="product-info">
                     <h3 id="h${i + 1}">${lista_mezclada[i + x].nombre}</h3>
                     <p id="p${i + 1}">${lista_mezclada[i + x].precio}</p>
