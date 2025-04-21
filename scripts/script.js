@@ -20,7 +20,7 @@ var datos = [];
 import base from '/DATA/datos.json' with { type: 'json' };
  
 var dic_productos= base;
-console.log(base);
+
 
 /* Definir cantidad de paginas */
 const cant_productos = dic_productos.length;
