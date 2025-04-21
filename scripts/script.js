@@ -17,7 +17,7 @@ function gocategoria() {
 
 /* Array de productos */
 var datos = [];
-import base from 'DATA/datos.json' with { type: 'json' };
+import base from '/DATA/datos.json' with { type: 'json' };
  
 var dic_productos= base;
 console.log(base);
@@ -71,7 +71,7 @@ var div_categori = "";
 const categorias = ["Blusa", "Pantalon", "Vestido", "Lenceria"];
 for (i = 0; i < categorias.length; i++) {
     div_categori += `<div class="container" onclick="click_categorias('${categorias[i]}')">
-    <img id="${categorias[i]}" src="your-image-url.jpg" alt="Descripción" class="image-48x48">
+    <img id="${categorias[i]}" src="" alt="Descripción" class="image-48x48">
     <div class="text-blue">${categorias[i]}</div>
   </div>`;
 }
@@ -91,7 +91,7 @@ function galleryproduct(pagina_activa) {
         for (i = 0; i < product_x_pag; i++) {
             gall += `
             <div class="product-card" onclick="click_imagen(${i + 1})">
-                <img id="img${i + 1}" src="media/${lista_mezclada[i + x].nombre}/${lista_mezclada[i + x].nombre}.jpg" nombre="${lista_mezclada[i + x].nombre}" alt="imagen1">
+                <img id="img${i + 1}" src="/media/${lista_mezclada[i + x].nombre}/${lista_mezclada[i + x].nombre}.jpg" nombre="${lista_mezclada[i + x].nombre}" alt="imagen1">
                 <div class="product-info">
                     <h3 id="h${i + 1}">${lista_mezclada[i + x].nombre}</h3>
                     <p id="p${i + 1}">${lista_mezclada[i + x].precio}</p>
@@ -102,7 +102,7 @@ function galleryproduct(pagina_activa) {
         for (i = 0; i < (lista_mezclada.length % product_x_pag); i++) {
             gall += `
             <div class="product-card" onclick="click_imagen(${i + 1})">
-                <img id="img${i + 1}" src="media/${lista_mezclada[i + x].nombre}/${lista_mezclada[i + x].nombre}.jpg" nombre="${lista_mezclada[i + x].nombre}" alt="imagen1">
+                <img id="img${i + 1}" src="/media/${lista_mezclada[i + x].nombre}/${lista_mezclada[i + x].nombre}.jpg" nombre="${lista_mezclada[i + x].nombre}" alt="imagen1">
                 <div class="product-info">
                     <h3 id="h${i + 1}">${lista_mezclada[i + x].nombre}</h3>
                     <p id="p${i + 1}">${lista_mezclada[i + x].precio}</p>
