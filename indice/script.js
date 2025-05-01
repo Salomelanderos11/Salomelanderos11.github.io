@@ -8,16 +8,16 @@ function goregistro() {
 }
 
 function govista() {
-    window.location.href = '/mypro/vista/vista.html';
+    window.location.href = 'vista/vista.html';
 }
 
 function gocategoria() {
-    window.location.href = '/mypro/categoria/categoria.html';
+    window.location.href = 'categoria/categoria.html';
 }
 
 /* Array de productos */
 
-import base from '/mypro/DATA/datos.json' with { type: 'json' };
+import base from 'DATA/datos.json' with { type: 'json' };
 var dic_productos= base;
 console.log(base);
 
@@ -95,7 +95,7 @@ function galleryproduct(pagina_activa) {
         console.log(imagen);
         gall += `
         <div class="product-card" onclick="click_imagen(${i + 1})">
-            <img id="img${i + 1}" src="/mypro/media/${produc_nom}/${imagen}" nombre="${producto.nombre}" alt="imagen1">
+            <img id="img${i + 1}" src="media/${produc_nom}/${imagen}" nombre="${producto.nombre}" alt="imagen1">
             <div class="product-info">
                 <h3 id="h${i + 1}">${producto.nombre}</h3>
                 <p id="p${i + 1}">${producto.precio}</p>
