@@ -9,12 +9,12 @@ var nombre_prod;
 window.onload = function() { 
     var value = objetoRecuperado.nombre;
     nombre_prod= value.replace(/ /g, "_");
-    var ruta= "/mypro/media/"+(nombre_prod)+"/"+(nombre_prod)+"_1.avif"
+    var ruta= "/media/"+(nombre_prod)+"/"+(nombre_prod)+"_1.avif"
     miImagen.src=ruta;
     }
 /*Extraer valor compartido del localstorage al cargar la pagina y establecer la imagen inicial*/
 function  goinicio(){
-        window.location.href ='/mypro/indice/index.html';
+        window.location.href ='/indice/index.html';
     }
 button1.onclick =function() {  goinicio();   };
 
@@ -42,7 +42,7 @@ function click_next_ant(n) {
     if (valor<1){
         valor=5;
     }
-    var ruta = `/mypro/media/${nombre_prod}/${nombre_prod}_${valor}.avif`;
+    var ruta = `/media/${nombre_prod}/${nombre_prod}_${valor}.avif`;
     verificarImagen(ruta, function(existe) {
         if (existe) {
             miImagen.src = ruta;
@@ -55,7 +55,7 @@ function click_next_ant(n) {
             if (valor<1){
                 valor=5;
             }
-            ruta = `/mypro/media/${nombre_prod}/${nombre_prod}_${valor}.avif`;
+            ruta = `/media/${nombre_prod}/${nombre_prod}_${valor}.avif`;
             console.clear();
         }
     });
