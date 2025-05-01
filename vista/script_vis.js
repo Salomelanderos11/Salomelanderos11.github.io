@@ -14,7 +14,7 @@ window.onload = function() {
     }
 /*Extraer valor compartido del localstorage al cargar la pagina y establecer la imagen inicial*/
 function  goinicio(){
-        window.location.href ='/indice/index.html';
+        window.location.href ='/index.html';
     }
 button1.onclick =function() {  goinicio();   };
 
