@@ -50,7 +50,7 @@ body {
 
 /* Estilos para el contenido principal */
 .main-content {
-    background-image: url('media/Fondo.avif'); /* Ruta a tu imagen */
+    background-image: url('/media/Fondo.avif'); /* Ruta a tu imagen */
     background-size: cover; /* Ajusta la imagen para cubrir todo el área */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -73,7 +73,7 @@ body {
 /* Estilos para las imágenes */
 .imagen { 
     width: 80%; 
-    max-height: 250px; 
+    max-height: 350px; 
     border-radius: 10px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     transition: transform 0.2s; 
@@ -183,7 +183,7 @@ img:hover {
 }
 
 /* Media queries para dispositivos móviles */
-@media (max-width: 768px) {
+@media (max-width: 390px) {
     .main-content {
     background-image: url('/media/Fondo.avif'); /* Ruta a tu imagen */
     background-size: cover; /* Ajusta la imagen para cubrir todo el área */
@@ -203,6 +203,7 @@ img:hover {
     }
     .imagen {
         max-width: 90%;
+        max-height: 250px;
         border-radius: 7px;
         padding: 3px;
         margin: 10px 0;
@@ -229,7 +230,7 @@ img:hover {
 
     .imagen {
         width: 100%;
-        height: auto;
+        max-height: 250px;
     }
 
     .descripcion {
@@ -255,7 +256,7 @@ img:hover {
     
     .imagen {
         max-width: 80%; /* Ajusta el ancho máximo */
-        height: 400px; /* Mantén la proporción de la imagen */
+        max-height: 250px; /* Mantén la proporción de la imagen */
         margin-top:50px; /* Centra la imagen */
         }
     
