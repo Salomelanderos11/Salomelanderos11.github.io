@@ -73,7 +73,7 @@ body {
 /* Estilos para las imágenes */
 .imagen { 
     width: 80%; 
-    height: 1; 
+    max-height: 250px; 
     border-radius: 10px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     transition: transform 0.2s; 
