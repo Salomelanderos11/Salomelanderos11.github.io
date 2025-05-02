@@ -60,7 +60,6 @@ body {
     align-items: center;
     margin: 0px;
     margin-top: 89px;
-    flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
 }
 
 /* Estilos para centrar elementos */
@@ -243,5 +242,13 @@ img:hover {
 
     .contact-info, .social-media {
         margin: 10px; /* Reduce el margen */
+    }
+}
+
+/* Estilos específicos para pantallas de computadoras */
+@media (min-width: 421px) {
+    .imagen {
+        width: 400px; /* Tamaño fijo adecuado para pantallas de computadoras */
+        height: 400px; /* Tamaño fijo adecuado para pantallas de computadoras */
     }
 }
