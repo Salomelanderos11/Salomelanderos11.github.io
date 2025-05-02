@@ -60,6 +60,7 @@ body {
     align-items: center;
     margin: 0px;
     margin-top: 89px;
+    flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
 }
 
 /* Estilos para centrar elementos */
@@ -104,8 +105,6 @@ img:hover {
     line-height: 1; /* Mantén el interlineado del <p> */
 }
 
-
-
 /* Estilos para el pie de página */
 .footer {
     margin-right: 50px;
@@ -116,6 +115,8 @@ img:hover {
     align-items: center;
     border-top: 4px solid black; /* Blanco */
     width: 100%;
+    height: auto; /* Ajusta la altura automáticamente */
+    padding: 10px 0; /* Añade padding para el contenido */
 }
 
 /* Estilos para la información de contacto y redes sociales en el pie de página */
@@ -123,7 +124,7 @@ img:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px;
+    margin: 10px; /* Reduce el margen */
 }
 
 /* Estilos para los enlaces de redes sociales */
@@ -183,15 +184,36 @@ img:hover {
 }
 
 /* Media queries para dispositivos móviles */
-@media (max-width: 390px) {
+@media (max-width: 420px) {
     .main-content {
-    background-image: url('/media/Fondo.avif'); /* Ruta a tu imagen */
-    background-size: cover; /* Ajusta la imagen para cubrir todo el área */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    height: 100vh; /* Ajusta la altura del main */
-    flex-direction: column;
-    margin: 0px;
+        background-image: url('media/Fondo.avif'); /* Ruta a tu imagen */
+        background-size: cover; /* Ajusta la imagen para cubrir todo el área */
+        background-position: center; /* Centra la imagen */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
+        height: 100vh; /* Ajusta la altura del main */
+        flex-direction: column;
+        margin: 0px;
+        align-items: center; /* Centra los elementos */
+    }
+
+    .imagen {
+        max-width: 90%;
+        max-height: 250px;
+        border-radius: 7px;
+        padding: 3px;
+        margin: 10px 0;
+        margin-top: 20px; /* Ajusta el margen superior */
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        width: 100%; /* Asegura que los botones ocupen todo el ancho */
+    }
+
+    .button {
+        margin: 0 5px;
     }
 
     .descripcion {
@@ -200,22 +222,16 @@ img:hover {
         border-radius: 7px;
         padding: 3px;
         margin: 10px 0;
+        margin-top: 10px; /* Ajusta el margen superior */
     }
-    .imagen {
-        max-width: 90%;
-        max-height: 250px;
-        border-radius: 7px;
-        padding: 3px;
-        margin: 10px 0;
-    }
+
     .footer {
         flex-direction: column;
         text-align: center;
-        
+        height: auto; /* Ajusta la altura automáticamente */
+        padding: 10px 0; /* Añade padding para el contenido */
     }
-}
 
-@media (max-width: 480px) {
     .header h1 {
         font-size: 1.5em;
     }
@@ -224,44 +240,7 @@ img:hover {
         font-size: 12px;
     }
 
-    .main-content {
-        margin: 0;
-    }
-
-    .imagen {
-        width: 100%;
-        max-height: 250px;
-    }
-
-    .descripcion {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    .footer {
-        margin-right: 0;
-        padding: 10px;
-    }
-
     .contact-info, .social-media {
-        margin: 10px;
-    }
-}
-@media (max-width: 390px)  {
-    .button-container {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-    }
-    
-    .imagen {
-        max-width: 80%; /* Ajusta el ancho máximo */
-        max-height: 250px; /* Mantén la proporción de la imagen */
-        margin-top:50px; /* Centra la imagen */
-        }
-    
-
-    .button {
-        margin: 3 5px;
+        margin: 10px; /* Reduce el margen */
     }
 }
