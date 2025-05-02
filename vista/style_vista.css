@@ -190,10 +190,11 @@ img:hover {
         background-size: cover; /* Ajusta la imagen para cubrir todo el área */
         background-position: center; /* Centra la imagen */
         background-repeat: no-repeat; /* Evita que la imagen se repita */
-        height: 100vh; /* Ajusta la altura del main */
+        height: auto; /* Ajusta la altura automáticamente */
         flex-direction: column;
         margin: 0px;
         align-items: center; /* Centra los elementos */
+        padding-top: 60px; /* Añade padding superior para evitar que el header cubra la imagen */
     }
 
     .imagen {
