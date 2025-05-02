@@ -50,7 +50,7 @@ body {
 
 /* Estilos para el contenido principal */
 .main-content {
-    background-image: url('/media/Fondo.avif'); /* Ruta a tu imagen */
+    background-image: url('/mypro/vista/media/Fondo.avif'); /* Ruta a tu imagen */
     background-size: cover; /* Ajusta la imagen para cubrir todo el área */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -185,7 +185,7 @@ img:hover {
 /* Media queries para dispositivos móviles */
 @media (max-width: 420px) {
     .main-content {
-        background-image: url('media/Fondo.avif'); /* Ruta a tu imagen */
+        background-image: url('/mypro/vista/media/Fondo.avif'); /* Ruta a tu imagen */
         background-size: cover; /* Ajusta la imagen para cubrir todo el área */
         background-position: center; /* Centra la imagen */
         background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -251,4 +251,22 @@ img:hover {
         width: 400px; /* Tamaño fijo adecuado para pantallas de computadoras */
         height: 400px; /* Tamaño fijo adecuado para pantallas de computadoras */
     }
+}
+@media (min-width: 600px) {
+    .imagen {
+        width: 600px; /* Tamaño fijo adecuado para pantallas de computadoras */
+        height: 600px; /* Tamaño fijo adecuado para pantallas de computadoras */
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .descripcion {
+        margin-right:30px ;
+        border: 3px solid #555555;
+        border-radius: 7px;
+        padding-left: 20px;
+        margin-left: 20px;
+        margin-top: 10px; /* Ajusta el margen superior */
+        font-size: larger;
+    }
+
 }
