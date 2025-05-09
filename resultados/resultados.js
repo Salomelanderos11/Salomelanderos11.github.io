@@ -1,14 +1,14 @@
-import base from '/mypro/DATA/datos.json' with { type: 'json' };
+import base from '/DATA/datos.json' with { type: 'json' };
 function govista(productId) {
-    window.location.href = `/mypro/vista/vista.html?productId=${productId}`;
+    window.location.href = `/vista/vista.html?productId=${productId}`;
 }    
 
 //searchBar////////////////////////
 function goresultados(criterio) {
-    window.location.href = `/mypro/indice/resultados/resultados.html?criterio=${criterio}`;
+    window.location.href = `resultados.html?criterio=${criterio}`;
 }
 window.goresultados_cat= function (criterio,categoria) {
-    window.location.href = `/mypro/indice/resultados/resultados.html?criterio=${criterio}&cat=${categoria}`;
+    window.location.href = `resultados.html?criterio=${criterio}&cat=${categoria}`;
 }
 
 
@@ -50,7 +50,7 @@ function galleryproduct(pagina_activa) {
       
         gall += `
         <div class="product-card" onclick="click_imagen(${producto.id})">
-            <img id="img${i + 1}" src="/mypro/media/${produc_nom}/${imagen}" nombre="${producto.nombre}" alt="imagen1">
+            <img id="img${i + 1}" src="/media/${produc_nom}/${imagen}" nombre="${producto.nombre}" alt="imagen1">
             <div class="product-info">
                 <h3 id="h${i + 1}">${producto.nombre}</h3>
                 <p id="p${i + 1}">$${producto.precio}</p>

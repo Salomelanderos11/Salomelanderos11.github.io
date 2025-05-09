@@ -4,7 +4,7 @@ const descripcion = document.getElementById("Descripcion");
 var valor = 1;
 var nombre_prod;
 var objetoRecuperado;
-import base from '/mypro/DATA/datos.json' with { type: 'json' };
+import base from '/DATA/datos.json' with { type: 'json' };
 var dic_productos = base;
 
 
@@ -15,7 +15,7 @@ window.onload = function() {
     if ( objetoRecuperado) {
         var value = objetoRecuperado.nombre;
         nombre_prod = value.replace(/ /g, "_");
-        var ruta = "/mypro/media/" + nombre_prod + "/" + nombre_prod + "_1.avif";
+        var ruta = "/media/" + nombre_prod + "/" + nombre_prod + "_1.avif";
         miImagen.src = ruta;
 
         var desc_html = `
@@ -44,7 +44,7 @@ window.click_next_ant = function(n) { // Asegurarse de que la función esté dis
     if (valor < 1) {
         valor = 5;
     }
-    var ruta = `/mypro/media/${nombre_prod}/${nombre_prod}_${valor}.avif`;
+    var ruta = `/media/${nombre_prod}/${nombre_prod}_${valor}.avif`;
     verificarImagen(ruta, function(existe) {
         if (existe) {
             miImagen.src = ruta;
@@ -57,7 +57,7 @@ window.click_next_ant = function(n) { // Asegurarse de que la función esté dis
             if (valor < 1) {
                 valor = 5;
             }
-            ruta = `/mypro/media/${nombre_prod}/${nombre_prod}_${valor}.avif`;
+            ruta = `/media/${nombre_prod}/${nombre_prod}_${valor}.avif`;
             console.clear();
         }
     });
@@ -72,7 +72,7 @@ function verificarImagen(url, callback) {
 
 //searchBar////////////////////////
 function goresultados(criterio) {
-    window.location.href = `/mypro/indice/resultados/resultados.html?criterio=${criterio}`;
+    window.location.href = `/resultados/resultados.html?criterio=${criterio}`;
 }
 
 window.click_busqueda = function(event) {

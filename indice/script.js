@@ -1,24 +1,15 @@
-function goinicio() {
-    window.location.href = 'index.html';
-}
-
-function goregistro() {
-    c = 1;
-    //window.location.href = 'Sesion.html';
-}
-
 function govista(productId) {
-    window.location.href = `/mypro/vista/vista.html?productId=${productId}`;
+    window.location.href = `/vista/vista.html?productId=${productId}`;
 }
 
 
 function gocategoria(categoria) {
-    window.location.href = `/mypro/categoria/categoria.html?categoria=${categoria}`;
+    window.location.href = `/categoria/categoria.html?categoria=${categoria}`;
 }
 
 //searchBar////////////////////////
 function goresultados(criterio) {
-    window.location.href = `/mypro/indice/resultados/resultados.html?criterio=${criterio}`;
+    window.location.href = `/resultados/resultados.html?criterio=${criterio}`;
 }
 
 window.click_busqueda = function(event) {
@@ -38,7 +29,7 @@ window.click_busqueda = function(event) {
 
 /* Array de productos */
 
-import base from '/mypro/DATA/datos.json' with { type: 'json' };
+import base from '/DATA/datos.json' with { type: 'json' };
 var dic_productos= base;
 
 
@@ -121,7 +112,7 @@ function galleryproduct(pagina_activa) {
         console.log(imagen);
         gall += `
         <div class="product-card" onclick="click_imagen(${producto.id})">
-            <img id="img${i + 1}" src="/mypro/media/${produc_nom}/${imagen}" nombre="${producto.nombre}" alt="imagen1">
+            <img id="img${i + 1}" src="/media/${produc_nom}/${imagen}" nombre="${producto.nombre}" alt="imagen1">
             <div class="product-info">
                 <h3 id="h${i + 1}">${producto.nombre}</h3>
                 <p id="p${i + 1}">$${producto.precio}</p>

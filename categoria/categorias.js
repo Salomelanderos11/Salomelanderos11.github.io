@@ -1,18 +1,12 @@
-function goinicio() {
-    window.location.href = '/mypro/html/index.html';
-}
-function goregistro() {
-    window.location.href = '/html/Sesion.html';
-}
 function govista(productId) {
-    window.location.href = `/mypro/vista/vista.html?productId=${productId}`;
+    window.location.href = `/vista/vista.html?productId=${productId}`;
 }
 function goresultados(criterio) {
-    window.location.href = `/mypro/indice/resultados/resultados.html?criterio=${criterio}`;
+    window.location.href = `/resultados/resultados.html?criterio=${criterio}`;
 }
 
 /* Array de productos */
-import base from '/mypro/DATA/datos.json' with { type: 'json' };
+import base from '/DATA/datos.json' with { type: 'json' };
 
 /* Capturar la categoría clicada en el index */
 
@@ -67,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log(imagen);
             gall += `
             <div class="product-card" onclick="click_imagen(${i + 1})">
-                <img id="img${i + 1}" src="/mypro/media/${produc_nom}/${imagen}" nombre="${producto.nombre}" alt="imagen1">
+                <img id="img${i + 1}" src="/media/${produc_nom}/${imagen}" nombre="${producto.nombre}" alt="imagen1">
                 <div class="product-info">
                     <h3 id="h${i + 1}">${producto.nombre}</h3>
                     <p id="p${i + 1}">$${producto.precio}</p>
