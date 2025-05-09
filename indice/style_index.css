@@ -322,14 +322,10 @@ header {
         margin: 20px;
     }
 
-    .product-card img {
-        width: 100%;
-        height: auto;
-    }
-
     .footer {
         flex-direction: column;
         text-align: center;
+        padding: 10px;
     }
 }
 
@@ -346,11 +342,6 @@ header {
         margin: 10px;
     }
 
-    .product-card img {
-        width: 100%;
-        height: auto;
-    }
-
     .footer {
         margin-right: 0;
         padding: 10px;
@@ -360,3 +351,4 @@ header {
         margin: 10px;
     }
 }
+
