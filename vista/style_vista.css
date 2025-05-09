@@ -50,7 +50,7 @@ body {
 
 /* Estilos para el contenido principal */
 .main-content {
-    background-image: url('/media/Fondo.avif'); /* Ruta a tu imagen */
+    background-image: url('media/Fondo.avif'); /* Ruta a tu imagen */
     background-size: cover; /* Ajusta la imagen para cubrir todo el área */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -233,7 +233,7 @@ img:hover {
 /* Media queries para dispositivos móviles */
 @media (max-width: 420px) {
     .main-content {
-        background-image: url('/media/Fondo.avif'); /* Ruta a tu imagen */
+        background-image: url('media/Fondo.avif'); /* Ruta a tu imagen */
         background-size: cover; /* Ajusta la imagen para cubrir todo el área */
         background-position: center; /* Centra la imagen */
         background-repeat: no-repeat; /* Evita que la imagen se repita */
