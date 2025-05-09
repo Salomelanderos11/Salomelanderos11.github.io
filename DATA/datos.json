@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "nombre": "Conjunto Formal",
+        "precio": "250",
+        "inventario": "2",
+        "descripcion": "Conjunto formal color negro, tela algodon.",
+        "colores": "Negro, Azul",
+        "tipo": "Pantalones",
+        "tallas": "M"
+    },
+    {
+        "id": 2,
+        "nombre": "Conjunto sin mangas",
+        "precio": "250",
+        "inventario": "2",
+        "descripcion": "Conjunto de dos piezas tela algodon.",
+        "colores": "Rosa/Blanco, Cafe/Blanco",
+        "tipo": "Pantalones",
+        "tallas": "M"
+    },
+    {
+        "id": 3,
+        "nombre": "Conjunto deportivo",
+        "precio": "250",
+        "inventario": "2",
+        "descripcion": "Conjunto deportivo tela algodon, pans y saco tipo crop.Conjunto deportivo tela algodon, pans y saco tipo crop.Conjunto deportivo tela algodon, pans y saco tipo crop.Conjunto deportivo tela algodon, pans y saco tipo crop.",
+        "colores": "Negro, Rosa",
+        "tipo": "Pantalones",
+        "tallas": "Unitalla"
+    }
+]
