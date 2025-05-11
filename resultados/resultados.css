@@ -371,7 +371,7 @@ header {
 @media (max-width: 768px) {
     .main-content {
         flex-direction: column;
-        margin: 20px;
+        margin-top: 50px;
     }
 
     .product-card img {
@@ -395,7 +395,7 @@ header {
     }
 
     .main-content {
-        margin: 10px;
+        margin-top: 40px;
     }
 
     .product-card img {
