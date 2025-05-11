@@ -88,7 +88,7 @@ var div_categori = "";
 const categorias = ["Blusas", "Pantalones", "Shorts", "Lenceria","Camisas"];
 for (i = 0; i < categorias.length; i++) {
     div_categori += `<div class="container" onclick="click_categorias('${categorias[i]}')">
-    <img id="${categorias[i]}" src="your-image-url.jpg" alt="Descripción" class="image-48x48">
+    <img id="${categorias[i]}" src="/media/categorias/${categorias[i]}.avif" alt="Descripción" class="image-48x48">
     <div class="text-blue">${categorias[i]}</div>
   </div>`;
 }
