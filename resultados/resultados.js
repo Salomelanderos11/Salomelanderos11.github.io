@@ -37,7 +37,17 @@ document.addEventListener('DOMContentLoaded', function() {
     ////////////////////////// GENERAR LAS PRODUCT CARDS //////////////////////////
 function galleryproduct(pagina_activa) {
     var result= document.getElementById("result");
-    result.innerText=`Estos son los resultados de tu busqueda sobre ; ${criterio_r}`;
+    if (filteredProducts.length >0){
+        result.innerText=`Estos son los resultados de tu busqueda sobre ; ${criterio_r}`;
+    }else{
+        if(categoria!=null){ 
+            result.innerText=`No hay productos de tu busqueda en esta categoria :( n\ Prueba con otra categoria ;)`;
+        }else{
+            result.innerText=`No encontramos productos para tu busqueda :( n\ Prueba haciendo otra busqueda ;)`;
+        }
+        
+    }
+    
     var gallery = document.getElementById("gallery");
     let gall = "";
     let x = (pagina_activa - 1) * product_x_pag;
