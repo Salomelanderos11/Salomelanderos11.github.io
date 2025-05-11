@@ -112,7 +112,6 @@ function galleryproduct(pagina_activa) {
         var categoria_elegida=urlParams.get('cat');// Obtener el criterio directamente como cadena
         filteredProducts=filteredProducts.filter(product => product.tipo == categoria_elegida);
         var button_active= document.getElementById(categoria_elegida);
-        console.log(button_active);
         button_active.classList.add("active");
         
     }
