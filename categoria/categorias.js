@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
             let imagen = pagina_activa != can_paginas ? `${produc_nom}_1.avif` : `${produc_nom}_1.avif`;
             console.log(imagen);
             gall += `
-            <div class="product-card" onclick="click_imagen(${i + 1})">
+            <div class="product-card" onclick="click_imagen(${producto.id})">
                 <img id="img${i + 1}" src="/media/${producto.tipo}/${produc_nom}/${imagen}" nombre="${producto.nombre}" alt="imagen1" >
                 <div class="product-info">
                     <h3 id="h${i + 1}">${producto.nombre}</h3>
