@@ -15,7 +15,7 @@ window.onload = function() {
     if ( objetoRecuperado) {
         var value = objetoRecuperado.nombre;
         nombre_prod = value.replace(/ /g, "_");
-        var ruta = "/media/" + nombre_prod + "/" + nombre_prod + "_1.avif";
+        var ruta = `/media/${objetoRecuperado.tipo}/${nombre_prod}/${nombre_prod}_1.avif`;
         miImagen.src = ruta;
 
         var desc_html = `
