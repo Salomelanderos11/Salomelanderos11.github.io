@@ -60,7 +60,7 @@ function galleryproduct(pagina_activa) {
       
         gall += `
         <div class="product-card" onclick="click_imagen(${producto.id})">
-            <img id="img${i + 1}" src="/media/${produc_nom}/${imagen}" nombre="${producto.nombre}" alt="imagen1">
+            <img id="img${i + 1}" src="/media/${producto.tipo}/${produc_nom}/${imagen}" nombre="${producto.nombre}" alt="imagen1">
             <div class="product-info">
                 <h3 id="h${i + 1}">${producto.nombre}</h3>
                 <p id="p${i + 1}">$${producto.precio}</p>
