@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     filteredProducts=base.filter(product => product.tipo == categoria_elegida);
 /* Definir cantidad de páginas */
     const cant_productos = filteredProducts.length;
-    const product_x_pag = 3;
+    const product_x_pag = 15;
     var can_paginas = Math.floor(cant_productos / product_x_pag);
     console.log(can_paginas);
     if (cant_productos % product_x_pag != 0) { can_paginas += 1; }
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log(imagen);
             gall += `
             <div class="product-card" onclick="click_imagen(${i + 1})">
-                <img id="img${i + 1}" src="/media/${produc_nom}/${imagen}" nombre="${producto.nombre}" alt="imagen1">
+                <img id="img${i + 1}" src="/media/${producto.tipo}/${produc_nom}/${imagen}" nombre="${producto.nombre}" alt="imagen1">
                 <div class="product-info">
                     <h3 id="h${i + 1}">${producto.nombre}</h3>
                     <p id="p${i + 1}">$${producto.precio}</p>

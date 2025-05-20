@@ -40,7 +40,7 @@ var dic_productos= base;
 
 
 const cant_productos = dic_productos.length;
-const product_x_pag = 7;
+const product_x_pag = 15;
 
 var can_paginas = Math.floor(cant_productos / product_x_pag); // cantidad entera de paginas
 
