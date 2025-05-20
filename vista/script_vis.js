@@ -44,7 +44,7 @@ window.click_next_ant = function(n) { // Asegurarse de que la función esté dis
     if (valor < 1) {
         valor = 5;
     }
-    var ruta = `/media/${nombre_prod}/${nombre_prod}_${valor}.avif`;
+    var ruta = `/media/${objetoRecuperado.tipo}/${nombre_prod}/${nombre_prod}_${valor}.avif`;
     verificarImagen(ruta, function(existe) {
         if (existe) {
             miImagen.src = ruta;
@@ -57,7 +57,7 @@ window.click_next_ant = function(n) { // Asegurarse de que la función esté dis
             if (valor < 1) {
                 valor = 5;
             }
-            ruta = `/media/${nombre_prod}/${nombre_prod}_${valor}.avif`;
+            ruta = `/media/${objetoRecuperado.tipo}/${nombre_prod}/${nombre_prod}_${valor}.avif`;
             console.clear();
         }
     });
