@@ -78,6 +78,10 @@ dig.forEach(element => {
         pagina_activa = pagina_activa.toString();
         pagina_activa = pagina_activa[pagina_activa.length - 1];
         galleryproduct(pagina_activa);
+        window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Hace el scroll suave
+        });
     }
 });
 /* Añadir class active a numero de pagina */

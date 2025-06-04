@@ -50,7 +50,7 @@ body {
 
 /* Estilos para el contenido principal */
 .main-content {
-    background-image: url('media/Fondo.avif'); /* Ruta a tu imagen */
+    background-image: url('media/Fondo.avif'); 
     background-size: cover; /* Ajusta la imagen para cubrir todo el área */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -78,6 +78,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     transition: transform 0.2s; 
     margin-top: 20px; /* Agrega un margen superior para separar la imagen del header */
+    margin-bottom: 20px;
 }
 
 /* Estilos para las imágenes al pasar el ratón */
@@ -296,6 +297,7 @@ img:hover {
     .imagen {
         width: 400px; /* Tamaño fijo adecuado para pantallas de computadoras */
         height: 400px; /* Tamaño fijo adecuado para pantallas de computadoras */
+        margin-bottom: 20px;
     }
 }
 @media (min-width: 600px) {
@@ -304,6 +306,7 @@ img:hover {
         height: 600px; /* Tamaño fijo adecuado para pantallas de computadoras */
         margin-left: 20px;
         margin-right: 20px;
+        margin-bottom: 20px;
     }
     .descripcion {
         margin-right:30px ;
