@@ -191,11 +191,13 @@ body {
 }
 
 /* Estilos para la paginación */
+/* Estilos para la paginación */
 .pagination {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    background-color: #ededee;
 }
 
 /* Estilos para los elementos de la paginación */
@@ -207,6 +209,7 @@ body {
     border: 1px solid #ddd;
     margin: 0 4px;
     border-radius: 5px;
+    background-color: #ededee;
 }
 
 /* Estilos para el elemento activo de la paginación */
@@ -218,7 +221,7 @@ body {
 
 /* Estilos para los elementos de la paginación al pasar el ratón */
 .pagination div:hover:not(.active) {
-    background-color: #ddd;
+    background-color: #a9a7a7;
 }
 
 /* Estilos para el pie de página */
