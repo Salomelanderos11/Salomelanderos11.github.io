@@ -29,7 +29,7 @@ body {
 }
 
 .logo{
-    width: 60px;
+    width: 6%;
     margin-left: 5px;
     margin-right: 15px;
 }
@@ -39,7 +39,7 @@ body {
     text-decoration: none;
     margin-left: 2px;
     color: #fff;
-    font-size: 24px;
+    font-size: 70%;
 }
 
 /* Estilos para la sección derecha del encabezado */
@@ -61,12 +61,12 @@ body {
     border-left: 1px solid #bbb;
 }
 
+
+
+
 /* Estilos para el contenido principal */
-.main-content {
-    
-    flex: 1;
+.main-content {   
     padding: 20px;
-    margin-top: 10%;
 }
 .centered-container {
     width: 60%;
@@ -275,7 +275,7 @@ header {
 /*////////////////////////////BARRA DE CBUSQUEDA*/
 
 .searchBox {
-    left: 650px;
+    left: 280%;
     display: flex;
     max-width: 230px;
     align-items: center;
