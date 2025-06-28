@@ -15,7 +15,6 @@ body {
 /* Estilos para el encabezado */
 .header {
     margin: 0;
-    max-width: 100%;
     text-align: center;
     text-transform: uppercase;
     background-color: #350303;
