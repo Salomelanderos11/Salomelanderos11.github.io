@@ -647,7 +647,7 @@ form{
     }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 390px) {
     html {
         font-size: 1.2em; /* Más pequeño aún para pantallas muy estrechas */
     }
