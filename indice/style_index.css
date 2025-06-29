@@ -410,13 +410,13 @@ form{
     }
 }
 
-@media (max-width: 791px) {
+@media (min-width: 791px) {
     .header h1 {
         font-size: 1.5em;
     }
     form{
     margin: 0;
-    margin-left: 45%;
+    margin-left: 32%;
     }
     .searchBox{
     display: flex;
