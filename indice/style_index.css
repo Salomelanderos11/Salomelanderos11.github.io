@@ -1,5 +1,6 @@
 /* Estilos generales para html y body */
 html, body {
+    -webkit-text-size-adjust: 100%;
     margin: 0;
 }
 
@@ -14,31 +15,30 @@ body {
 
 /* Estilos para el encabezado */
 .header {
-    margin: 0;
-    text-align: center;
-    text-transform: uppercase;
-    background-color: #350303;
-    color: #fff;
-    position: static;
-    display: flex;
-  /*  justify-content: space-between;*/
-    align-items: center;
-    padding-top: 20px;
-    padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  background-color: #350303;
+  padding: 10px 20px;
+  gap: 10px;
 }
 
-.logo{
-    width: 6%;
-    margin-left: 5px;
-    margin-right: 15px;
+
+
+.logo {
+  width: clamp(40px, 6vw, 60px);
+  height: auto;
+  flex-shrink: 0;
 }
 
-/* Estilos para el enlace del encabezado */
 #mytiendita {
-    text-decoration: none;
-    margin-left: 2px;
-    color: #fff;
-    font-size: 70%;
+  font-size: clamp(0.8rem, 2vw, 1.3rem);
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+  margin: 0 10px;
+  flex-shrink: 1;
 }
 
 /* Estilos para la sección derecha del encabezado */
@@ -261,63 +261,67 @@ body {
 .social-media a:hover {
     text-decoration: underline;
 }
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #fff;
-    z-index: 1000;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #350303;
+    color: white;
+    flex-wrap: nowrap; /* 👈 evita que los elementos se vayan hacia abajo */
+    gap: 10px;
+    overflow: hidden;
 }
 
 /*////////////////////////////BARRA DE CBUSQUEDA*/
 
 .searchBox {
-    left: 280%;
-    display: flex;
-    max-width: 230px;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-    background: white;
-    border-radius: 25px;
-    position: relative;
-  }
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 25px;
+  padding: 4px 10px;
+  flex: 1;
+  min-width: 0;
+  max-width: 100%;
+  height: 40px;
+}
   
-  .searchButton {
-    color: white;
-    position: absolute;
-    right: 8px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: var(--gradient-2, linear-gradient(90deg, #5a0909 0%, black 100%));
-    border: 0;
-    display: inline-block;
-    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
-  }
+.searchButton {
+  width: clamp(28px, 8vw, 40px);
+  height: clamp(28px, 8vw, 40px);
+  background: linear-gradient(90deg, #5a0909 0%, black 100%);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
   /*hover effect*/
   button:hover {
     color: #fff;
     background-color: #1A1A1A;
     box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
     transform: translateY(-3px);
-  }
+}
   /*button pressing effect*/
-  button:active {
+ button:active {
     box-shadow: none;
     transform: translateY(0);
-  }
+}
   
-  .searchInput {
-    border: none;
-    background: none;
-    outline: none;
-    color: white;
-    font-size: 15px;
-    padding: 20px 40px 20px 20px;
-  }
+ /* Input de búsqueda */
+.searchInput {
+  border: none;
+  background: none;
+  outline: none;
+  color: black;
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
+  padding: 5px 10px;
+  width: 100%;
+  min-width: 0;
+}
+
   
   
 /*////////////////////////////BARRA DE CBUSQUEDA*/
@@ -325,7 +329,7 @@ header {
 
 
 /* Media queries para dispositivos móviles */
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
     .main-content {
         flex-direction: column;
         margin: 20px;
@@ -338,7 +342,7 @@ header {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 380px) {
     .header h1 {
         font-size: 1.5em;
     }
@@ -359,5 +363,69 @@ header {
     .contact-info, .social-media {
         margin: 10px;
     }
+}*/
+ 
+@media (max-width: 768px) {
+    .header {
+        width: 100%;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    form{
+        margin-right: 5%;
+    }
+    .searchBox {
+        width: 100%;
+        margin: 10px 0 0 0;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .main-content {
+        margin: 20px;
+    }
 }
 
+@media (max-width: 415px) {
+    .header h1 {
+        font-size: 1.5em;
+    }
+    .searchBox {
+        width: 50%;
+    }
+    .header-button {
+        font-size: 12px;
+    }
+    form{
+        width: 60%;
+        justify-items: flex-end;
+    }
+
+    .main-content {
+        margin: 10px;
+    }
+
+    .footer {
+        margin-right: 0;
+        padding: 10px;
+    }
+
+    .contact-info, .social-media {
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
