@@ -1,7 +1,21 @@
+/*FONT*/
+/* Example Quicksand font class */
+.quicksand-regular {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* Estilos generales para html y body */
 html, body {
     -webkit-text-size-adjust: 100%;
     margin: 0;
+    font-size: 20px;
+    font-family:Quicksand; 
+    margin:0;
+    padding: 0;
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
 }
 
 
@@ -16,48 +30,45 @@ body {
 /* Estilos para el encabezado */
 .header {
     width: 100%;
-    /* margin: 0; */
-    text-align: center;
-    text-transform: uppercase;
     background-color: #350303;
     color: #fff;
-    position: static;
     display: flex;
-    /*  justify-content: space-between;*/
-    align-items: center;
-    padding-top: 20px;
-    padding-bottom: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  background-color: #350303;
-  padding: 10px 20px;
-  gap: 10px;
+    align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: space-between; /* Distribuye el espacio entre los grupos (logo+titulo y searchbar) */
+    flex-wrap: nowrap; /* ¡IMPORTANTE! Evita que los elementos se rompan a la siguiente línea */
+    padding: 10px 20px;
+    gap: 10px; /* Espacio entre los elementos flex directos */
 }
 
-
+.header-left-group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 1; /* Permite que este grupo se encoja */
+    min-width: 0; /* Importante para que flex-shrink funcione correctamente con el texto nowrap */
+}
 
 .logo {
-  width: clamp(40px, 6vw, 60px);
+  width: clamp(5.0rem, 2vw, 2.3rem);
   height: auto;
   flex-shrink: 0;
 }
 
 #mytiendita {
-  font-size: clamp(0.8rem, 2vw, 1.3rem);
-  color: white;
-  text-decoration: none;
-  white-space: nowrap;
-  margin: 0 10px;
-  flex-shrink: 1;
+    font-size: clamp(0.8rem, 2vw, 1.3rem);
+    color: white;
+    text-decoration: none;
+    white-space: nowrap; /* Evita que el texto del título se rompa */
+    margin: 0 10px;
+    flex-shrink: 1; /* Permite que el título se encoja si es necesario */
 }
 
-/* Estilos para la sección derecha del encabezado */
 .header-right {
     display: flex;
-    justify-content: flex-end;
+    align-items: center; /* Centrar verticalmente los elementos dentro de header-right */
+    gap: 10px; /* Espacio entre el formulario y otros botones si los hay */
+    flex-shrink: 0; /* Asegura que este grupo no se encoja drásticamente */
 }
+
 
 /* Estilos para los botones del encabezado */
 .header-button {
@@ -71,7 +82,14 @@ body {
     border: none;
     border-left: 1px solid #bbb;
 }
-
+form {
+    display: flex; /* Hace que el form sea un contenedor flex */
+    align-items: center; /* Centra verticalmente los elementos dentro del form */
+    flex-grow: 1; /* Permite que el formulario ocupe el espacio disponible */
+    justify-content: flex-end; /* Alinea el contenido del formulario a la derecha */
+    max-width: 350px; /* Limita el ancho máximo del formulario en pantallas grandes */
+    min-width: 0; /* Necesario para que flex-grow funcione correctamente */
+}
 
 
 
@@ -285,40 +303,66 @@ body {
     overflow: hidden;
 }
 
+/* Estilos para la sección derecha del encabezado (donde está el form y quizás otros botones) */
+.header-right {
+    display: flex;
+    align-items: center; /* Centrar verticalmente los elementos dentro de header-right */
+    gap: 10px; /* Espacio entre el formulario y otros botones si los hay */
+}
+
 /*////////////////////////////BARRA DE CBUSQUEDA*/
 
-.searchBox {
-    display: flex;
-    left: 280%;
-    gap: 1%;
-    border-radius: 25px;
-    width: 150%;
-  }
-
-  
-  .searchButton {
-    position: relative;
-    left: -15%;
-    padding: 0;
-    color: white;
-    right: 8px;
-    width: 25%;
-    border-radius: 50%;
-    background: var(--gradient-2, linear-gradient(90deg, #5a0909 0%, black 100%));
-    border: 0;
-    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
-  }
-.searchButton {
-  width: clamp(28px, 8vw, 40px);
-  height: clamp(28px, 8vw, 40px);
-  background: linear-gradient(90deg, #5a0909 0%, black 100%);
-  border: none;
-  border-radius: 50%;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
+/* El formulario que contiene la barra de búsqueda y el botón */
+form {
+    display: flex; /* Hace que el form sea un contenedor flex */
+    align-items: center; /* Centra verticalmente searchBox y searchButton */
+    flex-grow: 1; /* Permite que el formulario ocupe el espacio disponible */
+    justify-content: flex-end; /* Alinea el contenido del formulario a la derecha */
+    max-width: 1000px; /* Limita el ancho máximo del formulario en pantallas grandes */
+    /* margin-left: auto; */ /* Esto empuja el form a la derecha si no está en un contenedor flex ya justificado */
 }
-  /*hover effect*/
+
+.searchBox {
+    display: flex; /* Hace que searchBox sea un contenedor flex */
+    align-items: center; /* Centra verticalmente el input y el botón */
+    border-radius: 20px;
+    background-color: white;
+    height: 50px; /* Altura de la caja blanca (ajústala según necesidad) */
+    flex-grow: 1; /* Permite que la caja de búsqueda crezca para llenar el espacio del form */
+    max-width: 250px; /* Limita el ancho máximo para evitar que sea demasiado grande */
+    padding: 0 5px; /* Pequeño padding interno para que el contenido no toque los bordes */
+    min-width: 0; /* Necesario para que flex-grow funcione correctamente */
+}
+
+/* Input de búsqueda */
+.searchInput {
+    border: none;
+    background: none;
+    outline: none;
+    color: black;
+    font-size: clamp(0.8rem, 1.2vw, 1rem); /* Buena práctica con clamp */
+    flex-grow: 1; /* Permite que el input ocupe el espacio disponible */
+    min-width: 0; /* Necesario para que flex-grow funcione correctamente en inputs */
+    padding: 0 5px; /* Pequeño padding para el texto dentro del input */
+}
+
+.searchButton {
+    width: clamp(28px, 8vw, 35px); /* Ajusta los límites, el máximo ligeramente más pequeño */
+    height: clamp(28px, 8vw, 35px);
+    background: linear-gradient(90deg, #5a0909 0%, black 100%);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 16px; /* Tamaño del icono de lupa (si es texto o icono font) */
+    cursor: pointer;
+    flex-shrink: 0; /* Evita que el botón se encoja */
+    display: flex; /* Para centrar el icono de la lupa si es texto */
+    justify-content: center; /* Centra el icono horizontalmente */
+    align-items: center; /* Centra el icono verticalmente */
+    margin-left: 5px; /* Pequeño espacio entre el input y el botón */
+}
+
+/*hover effect*/
   button:hover {
     color: #fff;
     background-color: #1A1A1A;
@@ -331,26 +375,6 @@ body {
     transform: translateY(0);
 }
   
-  .searchInput {
-    width: 150%;
-    border: none;
-    color: #191919;
-    font-size: 13px;
-    padding-right: 1%;
-    background: white;
-    border-radius: inherit;
-  }
- /* Input de búsqueda */
-.searchInput {
-  border: none;
-  background: none;
-  outline: none;
-  color: black;
-  font-size: clamp(0.8rem, 1.2vw, 1rem);
-  padding: 5px 10px;
-  width: 100%;
-  min-width: 0;
-}
 
   
   
@@ -504,68 +528,148 @@ form{
         margin: 10px;
     }
 }*/
- 
+
+
+/*.searchBox {
+    display: flex;
+    left: 280px;
+    gap: 1%;
+    border-radius: 20px;
+    width: 220px;
+    height: 50px;
+    background-color:white;
+  }
+
+  
+.searchButton {
+  width: clamp(28px, 8vw, 40px);
+  height: clamp(28px, 8vw, 40px);
+  background: linear-gradient(90deg, #5a0909 0%, black 100%);
+  border: none;
+  margin-left: 10px;
+  margin-right: 5px;
+  margin-top: 5px;
+  border-radius: 50%;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}*/
+
+/* Media Query para Tabletas y Teléfonos (Máximo 768px de ancho) */
 @media (max-width: 768px) {
-    .header {
-        width: 100%;
-        flex-direction: row;
-        align-items: flex-start;
+    html {
+        font-size: 16px; /* Ajusta el tamaño base de rem para pantallas medianas */
     }
-    form{
-        margin-right: 5%;
+    .header {
+        padding: 10px; /* Menos padding en pantallas más pequeñas */
+        /* Eliminado flex-wrap: wrap; si quieres que siempre esté en una línea */
+        gap: 10px; /* Espacio entre los elementos */
+    }
+    form {
+        margin-right: 0; /* Asegurar que no haya margen externo problemático */
+        max-width: 350px; /* Mantener un max-width razonable para tablets */
+        justify-content: center; /* Centrar el searchBox dentro del form si es más grande */
     }
     .searchBox {
-        width: 100%;
-        margin: 10px 0 0 0;
+        width: 100%; /* Ocupa todo el ancho del form */
+        margin: 0; /* Sin márgenes externos aquí, el form maneja el espacio */
+        height: 35px; /* Altura ajustada para tablets */
+        max-width: 300px; /* Limitar el ancho máximo para que no sea enorme en tablets */
     }
-
-    .footer {
-        flex-direction: column;
-        text-align: center;
-        padding: 10px;
+    .searchButton {
+        width: clamp(25px, 7vw, 32px); /* Ajusta el rango para el botón */
+        height: clamp(25px, 7vw, 32px);
     }
-
-    .main-content {
-        margin: 20px;
+    .searchInput {
+        font-size: clamp(0.7rem, 1.5vw, 0.9rem);
     }
 }
 
 @media (max-width: 415px) {
-    .header h1 {
-        font-size: 1.5em;
+    html {
+        font-size: 14px; /* Ajusta el tamaño base de rem para pantallas muy pequeñas */
+    }
+    #mytiendita {
+        font-size: clamp(0.7rem, 3vw, 1rem); /* Ajusta el título para muy pequeño */
+        margin: 0 5px;
+        white-space: nowrap; /* Asegura que no salte de línea */
+        overflow: hidden; /* Oculta si el texto es demasiado largo */
+        text-overflow: ellipsis; /* Añade puntos suspensivos si se oculta */
+    }
+    .header {
+        padding: 8px;
+        gap: 8px; /* Reducir el gap en pantallas más pequeñas */
+    }
+    .logo {
+        width: clamp(1.8rem, 8vw, 2.5rem); /* Ajusta el logo para muy pequeño */
+        flex-shrink: 0; /* Asegurar que no se encoja */
+    }
+    .header-right {
+        flex-grow: 1;
+        justify-content: flex-end; /* Alinea a la derecha dentro de su espacio */
+        min-width: 0; /* Importante para que se encoja si es necesario */
+    }
+    form {
+        width: 100%; /* Ocupa el 100% del header-right */
+        max-width: none; /* No tiene un max-width fijo en pantallas pequeñas */
+        justify-content: flex-end; /* Alinea la barra de búsqueda a la derecha */
+        margin: 0; /* Sin márgenes externos */
     }
     .searchBox {
-        width: 50%;
+        width: 100%; /* Ocupa el 100% del form */
+        height: 30px; /* Más pequeño aún */
+        max-width: 200px; /* Límite para que no ocupe todo el ancho si hay espacio */
     }
-    .header-button {
-        font-size: 12px;
+    .searchButton {
+        width: clamp(20px, 6vw, 28px); /* Botón aún más pequeño */
+        height: clamp(20px, 6vw, 28px);
+        font-size: 14px; /* Lupa más pequeña */
     }
-    form{
-        width: 60%;
-        justify-items: flex-end;
-    }
-
-    .main-content {
-        margin: 10px;
-    }
-
-    .footer {
-        margin-right: 0;
-        padding: 10px;
-    }
-
-    .contact-info, .social-media {
-        margin: 10px;
+    .searchInput {
+        font-size: clamp(0.6rem, 1.8vw, 0.8rem);
     }
 }
 
 @media screen and (max-width: 500px) {
-  .header a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-  .header-right {
-    float: none;
-  }
+    /* Estas reglas pueden ser redundantes si las de 768px y 415px ya cubren todo.
+       Se mantienen para tu estructura original, pero considera si son necesarias. */
+    .header a {
+        display: block;
+        text-align: left;
+    }
+}
+
+@media (max-width: 380px) {
+    html {
+        font-size: 1.2em; /* Más pequeño aún para pantallas muy estrechas */
+    }
+    #mytiendita {
+        font-size: clamp(0.6rem, 3vw, 0.8rem); /* Un poco más pequeño si es necesario */
+    }
+    .header {
+        padding: 5px; /* Menos padding para pantallas muy pequeñas */
+        gap: 5px; /* Menor espacio entre elementos */
+    }
+    .logo {
+        margin-top:8px;
+        width: 2.6em;
+        height: 2.6em;
+    }
+    form {
+        width: 100%; /* Ocupa el 100% del header-right */
+        justify-content: flex-end; /* Alinea la barra de búsqueda a la derecha */
+    }
+    .searchBox {
+        margin-top:10px;
+        max-width: 120px; /* Un valor más razonable para pantallas muy pequeñas */
+        height: 28px; /* Aún más pequeño */
+    }
+    .searchButton {
+        width: 1.1em; /* Botón más pequeño */
+        height: 1.1em;
+        font-size: 1.2em; /* Lupa más pequeña */
+    }
+    .searchInput {
+        font-size: clamp(0.5rem, 1.5vw, 0.7rem);
+    }
 }
