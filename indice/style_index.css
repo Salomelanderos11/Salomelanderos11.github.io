@@ -296,7 +296,7 @@ body {
   }
 
   
-  .searchButton {
+ /* .searchButton {
     position: relative;
     left: -15%;
     padding: 0;
@@ -307,16 +307,18 @@ body {
     background: var(--gradient-2, linear-gradient(90deg, #5a0909 0%, black 100%));
     border: 0;
     transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
-  }
+  }*/
 .searchButton {
   width: clamp(28px, 8vw, 40px);
-  height: clamp(28px, 8vw, 40px);
-  background: linear-gradient(90deg, #5a0909 0%, black 100%);
-  border: none;
-  border-radius: 50%;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
+      position: relative;
+    left: -19%;
+    height: clamp(28px, 8vw, 44px);
+    background: linear-gradient(90deg, #5a0909 0%, black 100%);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
 }
   /*hover effect*/
   button:hover {
@@ -332,25 +334,15 @@ body {
 }
   
   .searchInput {
-    width: 150%;
     border: none;
-    color: #191919;
-    font-size: 13px;
-    padding-right: 1%;
-    background: white;
-    border-radius: inherit;
+    outline: none;
+    color: black;
+    font-size: clamp(0.8rem, 1.2vw, 1rem);
+    padding: 5px 10px;
+    width: 100%;
   }
  /* Input de búsqueda */
-.searchInput {
-  border: none;
-  background: none;
-  outline: none;
-  color: black;
-  font-size: clamp(0.8rem, 1.2vw, 1rem);
-  padding: 5px 10px;
-  width: 100%;
-  min-width: 0;
-}
+
 
   
   
@@ -530,7 +522,7 @@ form{
     }
 }
 
-@media (max-width: 415px) {
+@media (max-width: 445px) {
     .header h1 {
         font-size: 1.5em;
     }
