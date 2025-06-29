@@ -15,17 +15,25 @@ body {
 
 /* Estilos para el encabezado */
 .header {
-    margin: 0;
+    width: 100%;
+    /* margin: 0; */
     text-align: center;
     text-transform: uppercase;
     background-color: #350303;
     color: #fff;
     position: static;
     display: flex;
-  /*  justify-content: space-between;*/
+    /*  justify-content: space-between;*/
     align-items: center;
     padding-top: 20px;
     padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  background-color: #350303;
+  padding: 10px 20px;
+  gap: 10px;
 }
 
 
@@ -280,29 +288,36 @@ body {
 /*////////////////////////////BARRA DE CBUSQUEDA*/
 
 .searchBox {
-    left: 280%;
     display: flex;
-    max-width: 230px;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-    background: white;
+    left: 280%;
+    gap: 1%;
     border-radius: 25px;
-    position: relative;
+    width: 150%;
   }
+
   
   .searchButton {
+    position: relative;
+    left: -15%;
+    padding: 0;
     color: white;
-    position: absolute;
     right: 8px;
-    width: 50px;
-    height: 50px;
+    width: 25%;
     border-radius: 50%;
     background: var(--gradient-2, linear-gradient(90deg, #5a0909 0%, black 100%));
     border: 0;
-    display: inline-block;
     transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
   }
+.searchButton {
+  width: clamp(28px, 8vw, 40px);
+  height: clamp(28px, 8vw, 40px);
+  background: linear-gradient(90deg, #5a0909 0%, black 100%);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
   /*hover effect*/
   button:hover {
     color: #fff;
@@ -317,13 +332,26 @@ body {
 }
   
   .searchInput {
+    width: 150%;
     border: none;
-    background: none;
-    outline: none;
-    color: white;
-    font-size: 15px;
-    padding: 20px 40px 20px 20px;
+    color: #191919;
+    font-size: 13px;
+    padding-right: 1%;
+    background: white;
+    border-radius: inherit;
   }
+ /* Input de búsqueda */
+.searchInput {
+  border: none;
+  background: none;
+  outline: none;
+  color: black;
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
+  padding: 5px 10px;
+  width: 100%;
+  min-width: 0;
+}
+
   
   
 /*////////////////////////////BARRA DE CBUSQUEDA*/
@@ -331,6 +359,7 @@ body {
 
 
 /* Media queries para dispositivos móviles */
+/*@media (min-width: 481px) and (max-width: 790px) {
 @media (max-width: 768px) {
     .main-content {
         flex-direction: column;
@@ -347,7 +376,7 @@ body {
     }
     
     .searchBox{
-        /*margin-left: 40%;*/
+        
         display: flex;
         height: 100%;
         left: 0;
