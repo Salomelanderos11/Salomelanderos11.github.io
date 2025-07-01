@@ -69,7 +69,7 @@ var pagina_activa = 1; // Comenzar en página 1
 var dig = div_paginas.querySelectorAll('[id]');
 
 function pag_activa(new_pag_activa) {
-    console.log("new_pag_activa: " + new_pag_activa);
+   
     
     // Validar que la página esté en rango
     if (new_pag_activa < 1 || new_pag_activa > can_paginas) {
@@ -166,8 +166,6 @@ var lista_mezclada = dic_productos.sort(() => Math.random() - 0.5);
 /* Establecer imagenes de pagina principal de manera aleatoria */
 
 function galleryproduct(pagina_activa) {
-    console.log("Mostrando página: " + pagina_activa);
-    console.log("Productos por página: " + product_x_pag);
     
     var gallery = document.getElementById("gallery");
     let gall = "";
@@ -179,7 +177,6 @@ function galleryproduct(pagina_activa) {
     let productos_restantes = lista_mezclada.length - indice_inicio;
     let productos_a_mostrar = Math.min(product_x_pag, productos_restantes);
     
-    console.log(`Página ${pagina_activa}: mostrando desde índice ${indice_inicio}, ${productos_a_mostrar} productos`);
     
     // Generar HTML para los productos de esta página
     for (let i = 0; i < productos_a_mostrar; i++) {
@@ -190,8 +187,7 @@ function galleryproduct(pagina_activa) {
             let produc_nom = producto.nombre.replace(/ /g, "_");
             let imagen = `${produc_nom}_1.avif`;
             
-            console.log(`Producto ${i + 1}: ${producto.nombre} (índice ${indice_producto})`);
-            
+           
             gall += `
             <div class="product-card" onclick="click_imagen(${producto.id})">
                 <img id="img${i + 1}" src="/media/${producto.tipo}/${produc_nom}/${imagen}" nombre="${producto.nombre}" alt="imagen1">
@@ -204,7 +200,7 @@ function galleryproduct(pagina_activa) {
     }
 
     gallery.innerHTML = gall;
-    console.log(`Total productos mostrados: ${productos_a_mostrar}`);
+   
 }
 
 
