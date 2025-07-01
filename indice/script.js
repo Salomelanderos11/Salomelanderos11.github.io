@@ -154,7 +154,7 @@ var div_categori = "";
 const categorias = ["Blusas", "Pantalones", "Shorts", "Lenceria", "Camisas"];
 for (i = 0; i < categorias.length; i++) {
     div_categori += `<div class="container" onclick="click_categorias('${categorias[i]}')">
-    <img id="${categorias[i]}" src="/mypro/media/categorias/${categorias[i]}.avif" alt="Descripción" class="image-48x48">
+    <img id="${categorias[i]}" src="/media/categorias/${categorias[i]}.avif" alt="Descripción" class="image-48x48">
     <div class="text-blue">${categorias[i]}</div>
   </div>`;
 }
@@ -194,7 +194,7 @@ function galleryproduct(pagina_activa) {
             
             gall += `
             <div class="product-card" onclick="click_imagen(${producto.id})">
-                <img id="img${i + 1}" src="/mypro/media/${producto.tipo}/${produc_nom}/${imagen}" nombre="${producto.nombre}" alt="imagen1">
+                <img id="img${i + 1}" src="/media/${producto.tipo}/${produc_nom}/${imagen}" nombre="${producto.nombre}" alt="imagen1">
                 <div class="product-info">
                     <h3 id="h${i + 1}">${producto.nombre}</h3>
                     <p id="p${i + 1}">${producto.precio}</p>
