@@ -219,5 +219,6 @@ window.click_categorias = function(categoria) {
 
 /* Activar class active a la pagina 1 al cargar la pagina */
 window.onload = function () {
-    dig[0].onclick();
+    setupPageButtons(); // Configurar event listeners
+    pag_activa(1); // Comenzar en página 1
 };
