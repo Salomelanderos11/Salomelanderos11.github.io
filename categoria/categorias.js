@@ -142,9 +142,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Calcular el índice de inicio para esta página
         let indice_inicio = (pagina_activa - 1) * product_x_pag;        let limite = pagina_activa != can_paginas ? product_x_pag : (filteredProducts.length - (can_paginas - 1) * product_x_pag);
         
-        
+
         for (let i = 0; i < limite; i++) {
-            let producto = filteredProducts[i + x];
+            let producto = filteredProducts[i + indice_inicio];
             let produc_nom= producto.nombre.replace(/ /g, "_");
             let imagen = pagina_activa != can_paginas ? `${produc_nom}_1.avif` : `${produc_nom}_1.avif`;
             console.log(imagen);
