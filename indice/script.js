@@ -11,6 +11,19 @@ function gocategoria(categoria) {
 function goresultados(criterio) {
     window.location.href = `/resultados/resultados.html?criterio=${criterio}`;
 }
+window.click_imagen = function(id) {
+    govista(id);
+}
+
+window.click_categorias = function(categoria) {
+    gocategoria(categoria);
+}
+
+/* Activar class active a la pagina 1 al cargar la pagina */
+window.onload = function () {
+    setupPageButtons(); // Configurar event listeners
+    pag_activa(1); // Comenzar en página 1
+};
 
 window.click_busqueda = function(event) {
     event.preventDefault(); // Evita la recarga de la página
@@ -42,7 +55,7 @@ if (cant_productos < product_x_pag) {
     can_paginas = 1;
 }
 
-var pagina = []; // Array vacio para añadir la cantidad de paginas  
+//var pagina = []; // Array vacio para añadir la cantidad de paginas  
 var text_paginas = ""; // aqui vamos agragar los div de cada pagina
 // Generar botones de página
 if(can_paginas <= 3){
@@ -205,16 +218,4 @@ function galleryproduct(pagina_activa) {
 
 
 /* Click en productos */
-window.click_imagen = function(id) {
-    govista(id);
-}
 
-window.click_categorias = function(categoria) {
-    gocategoria(categoria);
-}
-
-/* Activar class active a la pagina 1 al cargar la pagina */
-window.onload = function () {
-    setupPageButtons(); // Configurar event listeners
-    pag_activa(1); // Comenzar en página 1
-};
