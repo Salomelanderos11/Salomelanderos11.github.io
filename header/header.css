@@ -1,0 +1,218 @@
+/* === HEADER GENERAL === */
+.header {
+    width: 100%;
+    background-color: #350303;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 10px;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+/* === GRUPO IZQUIERDO (LOGO + NOMBRE) === */
+.header-left-group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 1;
+    min-width: 0;
+}
+
+.logo {
+    width: clamp(5.0rem, 2vw, 2.3rem);
+    height: auto;
+    flex-shrink: 0;
+    margin-top: 8px;
+}
+
+#mytiendita {
+    font-size: clamp(0.8rem, 2vw, 1.3rem);
+    color: white;
+    text-decoration: none;
+    white-space: nowrap;
+    margin: 0 10px;
+    flex-shrink: 1;
+}
+
+/* === GRUPO DERECHO (BÚSQUEDA U OTROS BOTONES) === */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+/* === FORMULARIO DE BÚSQUEDA === */
+form {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+    max-width: 350px;
+    min-width: 0;
+    margin-right: 5%;
+}
+
+/* === CAJA DE BÚSQUEDA === */
+.searchBox {
+    
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    background-color: white;
+    height: 50px;
+    flex-grow: 1;
+    max-width: 250px;
+    padding: 0 5px;
+    min-width: 0;
+}
+
+/* === INPUT DE BÚSQUEDA === */
+.searchInput {
+    border: none;
+    background: none;
+    outline: none;
+    color: black;
+    font-size: clamp(0.8rem, 1.2vw, 1rem);
+    flex-grow: 1;
+    min-width: 0;
+    padding: 0 5px;
+}
+
+/* === BOTÓN DE BÚSQUEDA === */
+.searchButton {
+    width: clamp(28px, 8vw, 35px);
+    height: clamp(28px, 8vw, 35px);
+    background: linear-gradient(90deg, #5a0909 0%, black 100%);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+}
+
+/* === EFECTOS PARA BOTÓN === */
+button:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
+    transform: translateY(-3px);
+}
+
+button:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+/* === RESPONSIVE HEADER === */
+
+/* Tablets y móviles medianos */
+@media (max-width: 768px) {
+    .header {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    form {
+        /* margin-right: 0; */
+        justify-content: end;
+        max-width: 350px;
+    }
+
+    .searchBox {
+        max-width: 50%;
+        height: 35px;
+        
+    }
+
+    .searchButton {
+        width: clamp(25px, 7vw, 32px);
+        height: clamp(25px, 7vw, 32px);
+    }
+
+    .searchInput {
+        font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+    }
+}
+
+/* Teléfonos pequeños */
+@media (max-width: 445px) {
+    .header h1 {
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    
+    }
+
+    .searchBox {
+        max-width: 50%;
+        height: 30px;
+    }
+
+    .searchButton {
+        width: clamp(20px, 6vw, 28px);
+        height: clamp(20px, 6vw, 28px);
+        font-size: 14px;
+    }
+
+    .searchInput {
+        font-size: clamp(0.6rem, 1.8vw, 0.8rem);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .header a {
+        display: block;
+        text-align: left;
+    }
+
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 390px) {
+    html {
+        font-size: 1.2em;
+    }
+
+    #mytiendita {
+        font-size: clamp(0.6rem, 3vw, 0.8rem);
+    }
+
+    .header {
+        padding: 5px;
+        gap: 5px;
+    }
+
+    .logo {
+        width: 2.6em;
+        height: 2.6em;
+    }
+
+    form {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .searchBox {
+        margin-top: 10px;
+        max-width: 120px;
+        height: 28px;
+    }
+
+    .searchButton {
+        width: 1.1em;
+        height: 1.1em;
+        font-size: 1.2em;
+    }
+
+    .searchInput {
+        font-size: clamp(0.5rem, 1.5vw, 0.7rem);
+    }
+}

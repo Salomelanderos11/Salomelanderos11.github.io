@@ -1,5 +1,4 @@
-/*FONT*/
-/* Example Quicksand font class */
+/* FONT */
 .quicksand-regular {
   font-family: "Quicksand", sans-serif;
   font-optical-sizing: auto;
@@ -12,14 +11,12 @@ html, body {
     -webkit-text-size-adjust: 100%;
     margin: 0;
     font-size: 20px;
-    font-family:Quicksand; 
-    margin:0;
+    font-family: Quicksand; 
     padding: 0;
-    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+    overflow-x: hidden;
 }
 
-
-/* Estilos para el body */
+/* Estilos para el body (sin header) */
 body {
     overflow-x: hidden;
     display: flex;
@@ -27,76 +24,11 @@ body {
     background-color: #6d0505;
 }
 
-/* Estilos para el encabezado */
-.header {
-    width: 100%;
-    background-color: #350303;
-    color: #fff;
-    display: flex;
-    align-items: center; /* Alinea verticalmente los elementos */
-    justify-content: space-between; /* Distribuye el espacio entre los grupos (logo+titulo y searchbar) */
-    flex-wrap: nowrap; /* ¡IMPORTANTE! Evita que los elementos se rompan a la siguiente línea */
-    padding: 10px 20px;
-    gap: 10px; /* Espacio entre los elementos flex directos */
-}
-
-.header-left-group {
-    display: flex;
-    align-items: center;
-    flex-shrink: 1; /* Permite que este grupo se encoja */
-    min-width: 0; /* Importante para que flex-shrink funcione correctamente con el texto nowrap */
-}
-
-.logo {
-  width: clamp(5.0rem, 2vw, 2.3rem);
-  height: auto;
-  flex-shrink: 0;
-}
-
-#mytiendita {
-    font-size: clamp(0.8rem, 2vw, 1.3rem);
-    color: white;
-    text-decoration: none;
-    white-space: nowrap; /* Evita que el texto del título se rompa */
-    margin: 0 10px;
-    flex-shrink: 1; /* Permite que el título se encoja si es necesario */
-}
-
-.header-right {
-    display: flex;
-    align-items: center; /* Centrar verticalmente los elementos dentro de header-right */
-    gap: 10px; /* Espacio entre el formulario y otros botones si los hay */
-    flex-shrink: 0; /* Asegura que este grupo no se encoja drásticamente */
-}
-
-
-/* Estilos para los botones del encabezado */
-.header-button {
-    padding: 2px;
-    padding-right: 10px;
-    background-color: #0a0a23;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    font-size: 15px;
-    color: #fff;
-    border: none;
-    border-left: 1px solid #bbb;
-}
-form {
-    display: flex; /* Hace que el form sea un contenedor flex */
-    align-items: center; /* Centra verticalmente los elementos dentro del form */
-    flex-grow: 1; /* Permite que el formulario ocupe el espacio disponible */
-    justify-content: flex-end; /* Alinea el contenido del formulario a la derecha */
-    max-width: 350px; /* Limita el ancho máximo del formulario en pantallas grandes */
-    min-width: 0; /* Necesario para que flex-grow funcione correctamente */
-}
-
-
-
-/* Estilos para el contenido principal */
+/* ESTILOS DEL CONTENIDO PRINCIPAL */
 .main-content {   
     padding: 20px;
 }
+
 .centered-container {
     width: 60%;
     margin: 20px auto;
@@ -107,7 +39,8 @@ form {
     font-family: fantasy;
     color: #1188bb;
 }
-/* Estilos para la galería */
+
+/* ESTILOS DE LA GALERÍA */
 .gallery {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -116,11 +49,12 @@ form {
     margin: 0 auto;
     padding: 20px 10px;
 }
-/*          catalogo          */
+
+/* ESTILOS DEL CATÁLOGO */
 .catalogo {
     display: flex;
     flex-direction: row;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 16px;
@@ -128,6 +62,7 @@ form {
     margin: 0 auto;
     padding: 20px 10px;
 }
+
 .product-categori {
     display: flex;
     flex-direction: column;
@@ -139,45 +74,44 @@ form {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
 }
-/* CSS for 48x48 images */
+
 .image-48x48 {
-    width: 80;
+    width: 80px;
     height: 80px;
-    background-color: #f1f4fa; /* Background color */
-    border: 2px solid #ffdd35; /* Border color */
-    border-radius: 8px; /* Rounded corners */
-    display: block; /* Display as block to stack elements vertically */
-    margin: auto auto; /* Center the image horizontally */
-    object-fit: cover; /* Ensure image covers the entire area */
-  }
+    background-color: #f1f4fa;
+    border: 2px solid #ffdd35;
+    border-radius: 8px;
+    display: block;
+    margin: auto auto;
+    object-fit: cover;
+}
 
-  /* CSS for the text */
-  .text-blue {
-    color: #006fb9; /* Text color */
-    font-family: 'Arial', sans-serif; /* Font family */
-    text-align: center; /* Center the text */
-    margin-top: 10px; /* Space between image and text */
-  }
+.text-blue {
+    color: #006fb9;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin-top: 10px;
+}
 
-  /* Container div */
-  .container {
-    background-color:#f1f4fa ;
+.container {
+    background-color: #f1f4fa;
     border-radius: 10px;
-    text-align: center; /* Center the container content */
-  }
+    text-align: center;
+}
+
 .product-categori img {
     width: 150px;
     max-width: 150px;
     height: 150px;
     border-radius: 10px 10px 0 0;
-    object-fit:cover;
+    object-fit: cover;
 }
+
 .product-categori:hover {
     transform: scale(1.05);
 }
-/*          catalogo          */
 
-/* Estilos para las tarjetas de producto */
+/* ESTILOS DE LAS TARJETAS DE PRODUCTO */
 .product-card {
     display: flex;
     flex-direction: column;
@@ -191,12 +125,10 @@ form {
     width: 100%;
 }
 
-/* Estilos para las tarjetas de producto al pasar el ratón */
 .product-card:hover {
     transform: scale(1.05);
 }
 
-/* Estilos para las imágenes de las tarjetas de producto */
 .product-card img {
     width: 100%;
     max-width: 350px;
@@ -205,25 +137,22 @@ form {
     object-fit: cover;
 }
 
-/* Estilos para la información de las tarjetas de producto */
 .product-info {
     padding: 10px;
     text-align: center;
 }
 
-/* Estilos para los títulos de las tarjetas de producto */
 .product-info h3 {
     margin: 10px 0 5px;
 }
 
-/* Estilos para los precios de las tarjetas de producto */
 .product-info p {
     margin: 0;
     color: #fdb347;
     font-weight: bold;
 }
 
-/* Estilos para la paginación */
+/* ESTILOS DE LA PAGINACIÓN */
 .pagination {
     display: flex;
     justify-content: center;
@@ -231,7 +160,6 @@ form {
     margin: 1%;
 }
 
-/* Estilos para los elementos de la paginación */
 .pagination div {
     color: #0a0a23;
     padding: 8px 16px;
@@ -243,21 +171,18 @@ form {
     background-color: #ededee;
 }
 
-/* Estilos para el elemento activo de la paginación */
 .pagination div.active {
     background-color: #0a0a23;
     color: white;
     border: 1px solid #0a0a23;
 }
 
-/* Estilos para los elementos de la paginación al pasar el ratón */
 .pagination div:hover:not(.active) {
     background-color: #a9a7a7;
 }
 
-/* Estilos para el pie de página */
+/* ESTILOS DEL FOOTER */
 .footer {
-    
     margin-right: 50px;
     background-color: #0a0a23;
     color: #fff;
@@ -268,8 +193,6 @@ form {
     width: 100%;
 }
 
-
-/* Estilos para la información de contacto y redes sociales en el pie de página */
 .contact-info, .social-media {
     display: flex;
     flex-direction: column;
@@ -277,144 +200,17 @@ form {
     margin: 20px;
 }
 
-/* Estilos para los enlaces de redes sociales */
 .social-media a {
     color: #fdb347;
     text-decoration: none;
     margin: 5px 0;
 }
 
-/* Estilos para los enlaces de redes sociales al pasar el ratón */
 .social-media a:hover {
     text-decoration: underline;
 }
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
-    background-color: #350303;
-    color: white;
-    flex-wrap: nowrap; /* 👈 evita que los elementos se vayan hacia abajo */
-    gap: 10px;
-    overflow: hidden;
-}
 
-/* Estilos para la sección derecha del encabezado (donde está el form y quizás otros botones) */
-.header-right {
-    display: flex;
-    align-items: center; /* Centrar verticalmente los elementos dentro de header-right */
-    gap: 10px; /* Espacio entre el formulario y otros botones si los hay */
-}
-
-/*////////////////////////////BARRA DE CBUSQUEDA*/
-
-.searchBox {
-    display: flex;
-    left: 280%;
-    gap: 1%;
-    border-radius: 25px;
-    width: 150%;
-  }
-
-  
- /* .searchButton {
-    position: relative;
-    left: -15%;
-    padding: 0;
-    color: white;
-    right: 8px;
-    width: 25%;
-    border-radius: 50%;
-    background: var(--gradient-2, linear-gradient(90deg, #5a0909 0%, black 100%));
-    border: 0;
-    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
-  }*/
-.searchButton {
-  width: clamp(28px, 8vw, 40px);
-      position: relative;
-    left: -19%;
-    height: clamp(28px, 8vw, 44px);
-    background: linear-gradient(90deg, #5a0909 0%, black 100%);
-    border: none;
-    border-radius: 50%;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-.searchBox {
-    display: flex; /* Hace que searchBox sea un contenedor flex */
-    align-items: center; /* Centra verticalmente el input y el botón */
-    border-radius: 20px;
-    background-color: white;
-    height: 50px; /* Altura de la caja blanca (ajústala según necesidad) */
-    flex-grow: 1; /* Permite que la caja de búsqueda crezca para llenar el espacio del form */
-    max-width: 250px; /* Limita el ancho máximo para evitar que sea demasiado grande */
-    padding: 0 5px; /* Pequeño padding interno para que el contenido no toque los bordes */
-    min-width: 0; /* Necesario para que flex-grow funcione correctamente */
-}
-
-/* Input de búsqueda */
-.searchInput {
-    border: none;
-    background: none;
-    outline: none;
-    color: black;
-    font-size: clamp(0.8rem, 1.2vw, 1rem); /* Buena práctica con clamp */
-    flex-grow: 1; /* Permite que el input ocupe el espacio disponible */
-    min-width: 0; /* Necesario para que flex-grow funcione correctamente en inputs */
-    padding: 0 5px; /* Pequeño padding para el texto dentro del input */
-}
-
-.searchButton {
-    width: clamp(28px, 8vw, 35px); /* Ajusta los límites, el máximo ligeramente más pequeño */
-    height: clamp(28px, 8vw, 35px);
-    background: linear-gradient(90deg, #5a0909 0%, black 100%);
-    border: none;
-    border-radius: 50%;
-    color: white;
-    font-size: 16px; /* Tamaño del icono de lupa (si es texto o icono font) */
-    cursor: pointer;
-    flex-shrink: 0; /* Evita que el botón se encoja */
-    display: flex; /* Para centrar el icono de la lupa si es texto */
-    justify-content: center; /* Centra el icono horizontalmente */
-    align-items: center; /* Centra el icono verticalmente */
-    margin-left: 5px; /* Pequeño espacio entre el input y el botón */
-}
-
-/*hover effect*/
-  button:hover {
-    color: #fff;
-    background-color: #1A1A1A;
-    box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
-    transform: translateY(-3px);
-}
-  /*button pressing effect*/
- button:active {
-    box-shadow: none;
-    transform: translateY(0);
-}
-  
-  .searchInput {
-    border: none;
-    outline: none;
-    color: black;
-    font-size: clamp(0.8rem, 1.2vw, 1rem);
-    padding: 5px 10px;
-    width: 100%;
-  }
- /* Input de búsqueda */
-
-
-  
-  
-/*////////////////////////////BARRA DE CBUSQUEDA*/
-
-
-
-/* Media queries para dispositivos móviles */
-/*@media (min-width: 481px) and (max-width: 790px) {
+/* MEDIA QUERIES PARA CONTENIDO GENERAL (SIN HEADER) */
 @media (max-width: 768px) {
     .main-content {
         flex-direction: column;
@@ -426,68 +222,9 @@ form {
         text-align: center;
         padding: 10px;
     }
-     .header h1 {
-        font-size: 1.5em;
-    }
-    
-    .searchBox{
-        
-        display: flex;
-        height: 100%;
-        left: 0;
-        width: 150%;
-        margin-right:10%;
-        
-        
-        
-    }
-form{
-    margin-left: 30%
-}
-.searchButton {
-    position:relative;
-    left:-20%;
-    background: rgb(120 4 4);
-    margin-left: 1%;
-    max-width: 100%;
-    
-}
-
-
-    .header-button {
-        
-        font-size: 12px;
-    }
 }
 
 @media (max-width: 380px) {
-    .header h1 {
-        font-size: 1.5em;
-    }
-    .searchBox{
-        margin-left:20%;
-        display: flex;
-        height: 100%;
-        left: 0;
-        width: 105%;
-        
-        
-    }
-
-.searchButton {
-    position:relative;
-    left:-20%;
-    background: rgb(120 4 4);
-    max-width: 100%;
-    
-}
-
-
-    .header-button {
-        
-        font-size: 12px;
-    }
-
     .main-content {
         margin: 10px;
     }
@@ -501,180 +238,27 @@ form{
         margin: 10px;
     }
 }
+@media (max-width: 1200px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1000px;
+    }
+}
 
-@media (min-width: 791px) {
-    .header h1 {
-        font-size: 1.5em;
+@media (max-width: 900px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 700px;
     }
-    form{
-    margin: 0;
-    margin-left: 32%;
-    }
-    .searchBox{
-    display: flex;
-    gap: 1%;
-    border-radius: 25px;
-    width: 150%;  
-    }
-    .searchInput{
-    width: 150%;
-    border: none;
-    color: #191919;
-    font-size: 13px;
-    padding-right: 1%;
-    background: white;
-    border-radius: inherit;
-    }
+}
 
-.searchButton {
-        position: relative;
-    left: -15%;
-    padding: 0;
-    color: white;
-    right: 8px;
-    width: 25%;
-    border-radius: 50%;
-    background: var(--gradient-2, linear-gradient(90deg, #5a0909 0%, black 100%));
-    border: 0;
-    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
     
-}
-
-
-    .header-button {
-        
-        font-size: 12px;
-    }
-
-    .main-content {
-        margin: 10px;
-    }
-
-    .footer {
-        margin-right: 0;
-        padding: 10px;
-    }
-
-    .contact-info, .social-media {
-        margin: 10px;
-    }
-}*/
-
-
-/*.searchBox {
-    display: flex;
-    left: 280px;
-    gap: 1%;
-    border-radius: 20px;
-    width: 220px;
-    height: 50px;
-    background-color:white;
-  }
-
-  
-.searchButton {
-  width: clamp(28px, 8vw, 40px);
-  height: clamp(28px, 8vw, 40px);
-  background: linear-gradient(90deg, #5a0909 0%, black 100%);
-  border: none;
-  margin-left: 10px;
-  margin-right: 5px;
-  margin-top: 5px;
-  border-radius: 50%;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-}*/
-
-/* Media Query para Tabletas y Teléfonos (Máximo 768px de ancho) */
-@media (max-width: 768px) {
-    html {
-        font-size: 16px; /* Ajusta el tamaño base de rem para pantallas medianas */
-    }
-    .header {
-        padding: 10px; /* Menos padding en pantallas más pequeñas */
-        /* Eliminado flex-wrap: wrap; si quieres que siempre esté en una línea */
-        gap: 10px; /* Espacio entre los elementos */
-    }
-    form {
-        margin-right: 0; /* Asegurar que no haya margen externo problemático */
-        max-width: 350px; /* Mantener un max-width razonable para tablets */
-        justify-content: center; /* Centrar el searchBox dentro del form si es más grande */
-    }
-    .searchBox {
-        width: 100%; /* Ocupa todo el ancho del form */
-        margin: 0; /* Sin márgenes externos aquí, el form maneja el espacio */
-        height: 35px; /* Altura ajustada para tablets */
-        max-width: 300px; /* Limitar el ancho máximo para que no sea enorme en tablets */
-    }
-    .searchButton {
-        width: clamp(25px, 7vw, 32px); /* Ajusta el rango para el botón */
-        height: clamp(25px, 7vw, 32px);
-    }
-    .searchInput {
-        font-size: clamp(0.7rem, 1.5vw, 0.9rem);
-    }
-}
-
-@media (max-width: 445px) {
-    .header h1 {
-        font-size: 1.5em;
-    }
-    .searchBox {
-        width: 100%; /* Ocupa el 100% del form */
-        height: 30px; /* Más pequeño aún */
-        max-width: 200px; /* Límite para que no ocupe todo el ancho si hay espacio */
-    }
-    .searchButton {
-        width: clamp(20px, 6vw, 28px); /* Botón aún más pequeño */
-        height: clamp(20px, 6vw, 28px);
-        font-size: 14px; /* Lupa más pequeña */
-    }
-    .searchInput {
-        font-size: clamp(0.6rem, 1.8vw, 0.8rem);
-    }
-}
-
-@media screen and (max-width: 500px) {
-    /* Estas reglas pueden ser redundantes si las de 768px y 415px ya cubren todo.
-       Se mantienen para tu estructura original, pero considera si son necesarias. */
-    .header a {
-        display: block;
-        text-align: left;
-    }
-}
-
-@media (max-width: 390px) {
-    html {
-        font-size: 1.2em; /* Más pequeño aún para pantallas muy estrechas */
-    }
-    #mytiendita {
-        font-size: clamp(0.6rem, 3vw, 0.8rem); /* Un poco más pequeño si es necesario */
-    }
-    .header {
-        padding: 5px; /* Menos padding para pantallas muy pequeñas */
-        gap: 5px; /* Menor espacio entre elementos */
-    }
-    .logo {
-        margin-top:8px;
-        width: 2.6em;
-        height: 2.6em;
-    }
-    form {
-        width: 100%; /* Ocupa el 100% del header-right */
-        justify-content: flex-end; /* Alinea la barra de búsqueda a la derecha */
-    }
-    .searchBox {
-        margin-top:10px;
-        max-width: 120px; /* Un valor más razonable para pantallas muy pequeñas */
-        height: 28px; /* Aún más pequeño */
-    }
-    .searchButton {
-        width: 1.1em; /* Botón más pequeño */
-        height: 1.1em;
-        font-size: 1.2em; /* Lupa más pequeña */
-    }
-    .searchInput {
-        font-size: clamp(0.5rem, 1.5vw, 0.7rem);
+    .product-card img {
+        height: 300px;
     }
 }
