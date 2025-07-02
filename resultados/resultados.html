@@ -10,13 +10,24 @@
 </head>
 <body>
     <header class="header">
-        <h1><a id="mytiendita" href="/index.html">Sabrosas<br>Boutique</a></h1>
-        <div class="header-right">
-        </div><div class="searchBox">
-            
-            <form id="formsearch" >
-                <input id="barra_busqueda"class="searchInput" type="text" placeholder="Search something">
-                <button  id="busqueda"class="searchButton"onclick="click_busqueda(event)">
+    <!-- Logo -->
+<div style="
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+"> <img src="/media/iconoSB.avif" alt="sabrosas_boutique" class="logo">
+    
+    <!-- Nombre de la tienda -->
+    <h1 id="mytiendita" onclick="location.href='/index.html'">Sabrosas Boutique</h1>
+</div>
+   
+    <!-- Barra de búsqueda -->
+    <form id="formsearch" style="
+    margin-right: 5%;
+">
+        <div class="searchBox">
+            <input id="barra_busqueda" class="searchInput" type="text" placeholder="Buscar productos">
+            <button id="busqueda" class="searchButton" onclick="click_busqueda(event)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none">
                     <g clip-path="url(#clip0)">
                         <g filter="url(#filter0)">
@@ -29,7 +40,7 @@
                             <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
                             <feOffset dy="4"></feOffset>
                             <feGaussianBlur stdDeviation="2"></feGaussianBlur>
-                           hardAlpha" operator="out"></feComposite>
+                            <feComposite in2="hardAlpha" operator="out"></feComposite>
                             <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
                             <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"></feBlend>
                             <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"></feBlend>
@@ -40,9 +51,9 @@
                     </defs>
                 </svg>
             </button>
-        </form>
         </div>
-    </header>
+    </form>
+</header>
     <main class="main-content">
         <div id="result"class="centered-container">
             <p>Estos son los resultados de tu busqueda sobre ; </p>
