@@ -1,4 +1,3 @@
-import base from '/DATA/datos.json' with { type: 'json' };
 function govista(productId) {
     window.location.href = `/vista/vista.html?productId=${productId}`;
 }    
@@ -26,169 +25,179 @@ window.click_busqueda = function(event) {
 }
 
 //searchBar////////////////////////
+import base from '/DATA/datos.json' with { type: 'json' };
 
-
-//////////////////////////CARGA DE CONTENIDO//////////////////////////
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var dic_productos = base;
-    var filteredProducts = new Array;
+    var filteredProducts = [];
 
-
-    ////////////////////////// GENERAR LAS PRODUCT CARDS //////////////////////////
-function galleryproduct(pagina_activa) {
-    var result= document.getElementById("result");
-    if (filteredProducts.length >0){
-        result.innerText=`Estos son los resultados de tu busqueda sobre ; ${criterio_r}`;
-    }else{
-        if(categoria!=null){ 
-            result.innerText=`No hay productos de tu busqueda en esta categoria :( n\ Prueba con otra categoria ;)`;
-        }else{
-            result.innerText=`No encontramos productos para tu busqueda :( n\ Prueba haciendo otra busqueda ;)`;
-        }
-        
-    }
-    
-    var gallery = document.getElementById("gallery");
-    let gall = "";
-    let x = (pagina_activa - 1) * product_x_pag;
-    let limite = pagina_activa != can_paginas ? product_x_pag : filteredProducts.length % product_x_pag;
-
-    for (let i = 0; i < limite; i++) {
-        let producto = filteredProducts[i + x];
-        let produc_nom = producto.nombre.replace(/ /g, "_");
-        let imagen = pagina_activa != can_paginas ? `${produc_nom}_1.avif` : `${produc_nom}_1.avif`;
-      
-        gall += `
-        <div class="product-card" onclick="click_imagen(${producto.id})">
-            <img id="img${i + 1}" src="/media/${producto.tipo}/${produc_nom}/${imagen}" nombre="${producto.nombre}" alt="imagen1">
-            <div class="product-info">
-                <h3 id="h${i + 1}">${producto.nombre}</h3>
-                <p id="p${i + 1}">$${producto.precio}</p>
-            </div>
-        </div>`;
-    }
-
-    gallery.innerHTML = gall;
-}
-////////////////////////// GENERAR LAS PRODUCT CARDS //////////////////////////
-
-    
-    /*/////obtener los datos del URL ///// */
     const urlParams = new URLSearchParams(window.location.search);
-    var criterio_r=urlParams.get('criterio');// Obtener el criterio directamente como cadena
-    if(criterio_r!= null){ //Verificar que criterio de busqueda no sea nulo
-        criterio_r= criterio_r.replace("_"," ");//remplaza _ por espacios
+    var criterio_r = urlParams.get('criterio');
+    if (criterio_r != null) {
+        criterio_r = criterio_r.replace(/_/g, " ");
     }
-    //FILTRADO DE PRODUCTOS
-    var criterio_ini= criterio_r.toLowerCase();
-    const criterios = criterio_ini ? criterio_ini.split("_") : []; // Dividir la cadena en un array si por si buscan mas de una palabra
-    dic_productos.forEach(producto => {//busca entodos los productos de la base 
-        criterios.forEach(criterio => {// busca por cada palabra del criterio de busqueda
-            if (criterio.length > 2) { // si la palabra es de 2 o menos caracteres la rechaza
-                if (producto.nombre.toLowerCase().includes(criterio) || producto.descripcion.toLowerCase().includes(criterio)) { 
-                    if (!filteredProducts.some(productofil => productofil.id === producto.id)) { //si no se encuentra en el array de productos filtrados lo mete 
-                        filteredProducts.push(producto);
-                    }
+    var criterio_ini = criterio_r?.toLowerCase() || "";
+    const criterios = criterio_ini ? criterio_ini.split(" ") : [];
+
+    dic_productos.forEach(producto => {
+        criterios.forEach(criterio => {
+            if (criterio.length > 2 &&
+                (producto.nombre.toLowerCase().includes(criterio) || producto.descripcion.toLowerCase().includes(criterio))
+            ) {
+                if (!filteredProducts.some(p => p.id === producto.id)) {
+                    filteredProducts.push(producto);
                 }
             }
         });
     });
-    //FILTRADO DE PRODUCTOS
+    const categorias = ["Blusas", "Pantalones", "Shorts", "Lenceria", "Camisas"];
+    const contenedorCategorias = document.getElementById("categorias");
     
-    /* Añadir botones de categorias de ropa */
-    const categori = document.getElementById("categorias");
-    var div_categori = "";
-    const categorias = ["Blusas", "Pantalones", "Shorts", "Lenceria","Camisas"];
-    for (i = 0; i < categorias.length; i++) {
-        div_categori += ` <button id="${categorias[i]}" class="boton-elegante" onclick="goresultados_cat('${criterio_r}','${categorias[i]}')">${categorias[i]}</button>`;
-    }
-    categori.innerHTML = div_categori;
-    /* Añadir botones de categorias de ropa */
+    categorias.forEach(categoria => {
+        const btn = document.createElement("button");
+        btn.setAttribute("id",categoria);
+        btn.classList.add("boton-categoria"); // puedes personalizar esta clase en tu CSS
+        btn.textContent = categoria;
+        btn.onclick = function () {
+            goresultados_cat(criterio_r, categoria); // o la función que uses para filtrar
+        };
+        contenedorCategorias.appendChild(btn);
+    });
 
-    ///////////////FILTRADO POR CATEGORIA
-    var categoria=urlParams.get('cat'); //si se seleccionó una categoria en los resultados de busqueda la captura
     
-    if(categoria!=null){ 
-        var categoria_elegida=urlParams.get('cat');// Obtener el criterio directamente como cadena
-        filteredProducts=filteredProducts.filter(product => product.tipo == categoria_elegida);
-        var button_active= document.getElementById(categoria_elegida);
-        button_active.classList.add("active");
+    const categoria = urlParams.get('cat');
+    
+    if (categoria != null) {
+        filteredProducts = filteredProducts.filter(product => product.tipo == categoria);
+        const btnAct = document.getElementById(categoria);
+        if (btnAct) {btnAct.classList.add("active");
+            
+        }
         
     }
-    //////////////FILTRADO POR CATEGORIA
 
-    /* Definir cantidad de paginas */
-    const cant_productos = filteredProducts.length;
+    if (filteredProducts.length >0){
+        const divresult= document.getElementById("result");
+        const presultado= document.createElement("p");
+        presultado.innerText= "Estos son los resultados de tu busqueda : "+ criterio_r;
+        divresult.appendChild (presultado);
+    }
+    else{
+        const divresult= document.getElementById("result");
+        const presultado= document.createElement("p");
+        presultado.innerText= "No se encontraron resultados para : "+ criterio_r;
+        divresult.appendChild (presultado);
+    }
+
     const product_x_pag = 15;
+    const cant_productos = filteredProducts.length;
+    var can_paginas = Math.ceil(cant_productos / product_x_pag);
 
-    var can_paginas = Math.floor(cant_productos / product_x_pag); // cantidad entera de paginas
+    const div_paginas = document.getElementById("div_paginas");
+    const gallery = document.getElementById("gallery");
 
-    if (cant_productos % product_x_pag != 0) {
-        can_paginas += 1;
+    let text_paginas = "";
+    for (let i = 0; i < Math.min(can_paginas, 3); i++) {
+        text_paginas += `<div id="pagina${i + 1}" value="${i + 1}">${i + 1}</div>`;
     }
 
-    if (cant_productos < product_x_pag) {
-        can_paginas = 1;
-    }
-    /* Definir cantidad de paginas */
-
-
-    var text_paginas = ""; // aqui vamos agragar los div de cada pagina
-    for (var i = 0; i < can_paginas; i++) {
-        text_paginas += `<div id="pagina${i + 1}">${i + 1}</div>`;
-    }
-    
-    var div_paginas = document.getElementById("div_paginas");
-    
-    if (div_paginas) {
-        div_paginas.innerHTML = `
-        <div>&laquo;</div>
+    div_paginas.innerHTML = `
+        <div id="ant">&laquo;</div>
         ${text_paginas}
-        <div>&raquo;</div>`;
+        <div id="next">&raquo;</div>
+    `;
 
-        /* Añadir class active a numero de pagina */
-        var pagina_activa;
-        var dig = div_paginas.querySelectorAll('[id]');
-        dig[0].classList.add("active");
-        dig.forEach(element => {
-            element.onclick = function () {
-                dig.forEach(element => {
-                    element.classList.remove("active");
-                });
-                element.classList.add("active");
-                pagina_activa = element.getAttribute("id");
-                pagina_activa = pagina_activa.toString();
-                pagina_activa = pagina_activa[pagina_activa.length - 1];
-                galleryproduct(pagina_activa);
+    const btnnext = document.getElementById("next");
+    const btnant = document.getElementById("ant");
+    let pagina_activa = 1;
+    const dig = div_paginas.querySelectorAll('[id]');
+
+    function galleryproduct(pagina) {
+        let gall = "";
+        let inicio = (pagina - 1) * product_x_pag;
+        let limite = pagina != can_paginas ? product_x_pag : (filteredProducts.length - (can_paginas - 1) * product_x_pag);
+
+        for (let i = 0; i < limite; i++) {
+            const producto = filteredProducts[i + inicio];
+            const produc_nom = producto.nombre.replace(/ /g, "_");
+            const imagen = `${produc_nom}_1.avif`;
+
+            gall += `
+            <div class="product-card" onclick="click_imagen(${producto.id})">
+                <img src="/media/${producto.tipo}/${produc_nom}/${imagen}" alt="${producto.nombre}">
+                <div class="product-info">
+                    <h3>${producto.nombre}</h3>
+                    <p>$${producto.precio}</p>
+                </div>
+            </div>`;
+        }
+        gallery.innerHTML = gall;
+    }
+
+    function pag_activa(nueva_pagina) {
+        if (nueva_pagina < 1 || nueva_pagina > can_paginas) return;
+
+        pagina_activa = nueva_pagina;
+        let grupo = Math.ceil(nueva_pagina / 3);
+        let inicio = (grupo - 1) * 3 + 1;
+
+        dig.forEach((el, idx) => {
+            if (el.id !== "ant" && el.id !== "next") {
+                let offset = idx - 1;
+                let nuevo_valor = inicio + offset;
+                if (nuevo_valor <= can_paginas) {
+                    el.textContent = nuevo_valor;
+                    el.setAttribute("value", nuevo_valor);
+                    el.style.display = "block";
+                    el.classList.remove("active");
+                    if (nuevo_valor == nueva_pagina) {
+                        el.classList.add("active");
+                    }
+                } else {
+                    el.style.display = "none";
+                }
             }
         });
 
-        /* Activar class active a la pagina 1 al cargar la pagina */
-        dig[0].onclick();
-    } else {
-        console.error("El elemento 'div_paginas' no se encuentra en el DOM.");
+        galleryproduct(nueva_pagina);
+        window.scrollTo({ top: 0, behavior: "smooth" });
     }
-    
+
+    function setupPageButtons() {
+        dig.forEach(el => {
+            if (el.id !== "ant" && el.id !== "next") {
+                el.onclick = () => {
+                    const valor = parseInt(el.getAttribute("value"));
+                    pag_activa(valor);
+                };
+            }
+        });
+
+        btnnext.onclick = () => {
+            if (pagina_activa < can_paginas) {
+                pag_activa(pagina_activa + 1);
+            }
+        };
+        btnant.onclick = () => {
+            if (pagina_activa > 1) {
+                pag_activa(pagina_activa - 1);
+            }
+        };
+    }
+
+    setupPageButtons();
+    pag_activa(1);
 });
+
 
 //////////////////////////CARGA DE CONTENIDO//////////////////////////
 
-window.click_categorias = function(categoria_elegida) {
-    
-    var filtrado_categoria= new Array;
-    filteredProducts.forEach(producto => {
-        if(producto.tipo == categoria_elegida){
-            if (!filtrado_categoria.some(productofil => productofil.id === producto.id)) {
-                filtrado_categoria.push(producto);
-            }
-        }
-    });
-    filteredProducts=filtrado_categoria;
-
-
- }
 
 
 window.click_imagen = function(id) {
     govista(id);
 }
+
+
+
+
