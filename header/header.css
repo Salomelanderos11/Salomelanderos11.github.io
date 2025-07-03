@@ -26,7 +26,12 @@
     flex-shrink: 0;
     margin-top: 8px;
 }
-
+#div_head{
+            width: 30%;
+    display: flex;
+    justify-content:space-around;
+       
+    }
 #mytiendita {
     font-size: clamp(0.8rem, 2vw, 1.3rem);
     color: white;
@@ -219,5 +224,42 @@ button:active {
 
     .searchInput {
         font-size: clamp(0.5rem, 1.5vw, 0.7rem);
+    }
+}
+@media (min-width: 1441px) {
+    .header {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    form {
+        /* margin-right: 0; */
+        justify-content: end;
+        max-width: 350px;
+    }
+
+    .searchBox {
+        max-width: 60%;
+        height: 35px;
+        
+    }
+    header h1{
+        display: flex;
+        align-items: center;
+    }
+   #div_head{
+        width: 40%;
+        display: flex;
+        justify-content:flex-start;
+       
+    }
+
+    .searchButton {
+        width: clamp(25px, 7vw, 32px);
+        height: clamp(25px, 7vw, 32px);
+    }
+
+    .searchInput {
+        font-size: clamp(0.7rem, 1.5vw, 0.9rem);
     }
 }
