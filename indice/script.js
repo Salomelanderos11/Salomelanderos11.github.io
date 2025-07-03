@@ -206,7 +206,7 @@ function galleryproduct(pagina_activa) {
                 <img id="img${i + 1}" src="/media/${producto.tipo}/${produc_nom}/${imagen}" nombre="${producto.nombre}" alt="imagen1">
                 <div class="product-info">
                     <h3 id="h${i + 1}">${producto.nombre}</h3>
-                    <p id="p${i + 1}">${producto.precio}</p>
+                    <p id="p${i + 1}">$${producto.precio}</p>
                 </div>
             </div>`;
         }

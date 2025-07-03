@@ -180,6 +180,27 @@ body {
 .pagination div:hover:not(.active) {
     background-color: #a9a7a7;
 }
+.boton-categoria {
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.boton-categoria:hover {
+    background-color: #333; /* tono más claro al pasar el cursor */
+}
+
+.active {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+
 
 /* ESTILOS DEL FOOTER */
 .footer {
